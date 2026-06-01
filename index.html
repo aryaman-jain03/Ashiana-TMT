@@ -504,17 +504,17 @@ sup.tm-sup {
 }
 .marquee-track:hover{ animation-play-state:paused; }
 .marquee-item{
-  display:inline-flex; align-items:center; gap:8px;
-  padding:0 12px; font-size:11px; letter-spacing:.16em; text-transform:uppercase;
+  display:inline-flex; align-items:center; gap:0;
+  padding:0; font-size:11px; letter-spacing:.16em; text-transform:uppercase;
   color:var(--ink-3); white-space:nowrap;
 }
-.marquee-item .msep{ color:var(--gold-2); opacity:.5; }
+.marquee-item .msep{ color:var(--gold-2); opacity:.5; margin:0 14px; }
 @keyframes marquee{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
 
 /* ═══════════════════════════════════════════
    SECTION SYSTEM
 ═══════════════════════════════════════════ */
-.sec{ padding:140px 0; }
+.sec{ padding:80px 0 140px; }
 .sec-bg1{ background:var(--bg-1); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
 .sec-bg2{ background:var(--bg-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
 
@@ -1118,9 +1118,9 @@ footer ul a:hover::before{ opacity:1; margin-right:0; }
   .hero{ padding-top:76px; padding-bottom:16px; overflow:hidden; min-height:unset; justify-content:flex-start; }
   .hero-grid{ gap:0; }
   .hero-stats{ grid-template-columns:1fr 1fr; gap:0; margin-top:16px; border:1px solid rgba(200,146,42,.2); border-radius:8px; overflow:hidden; }
-  .h-stat{ padding:16px 14px; border-left:none !important; border-right:none; border-bottom:1px solid rgba(200,146,42,.2); }
-  .h-stat:nth-child(odd){ border-right:1px solid rgba(200,146,42,.2); }
-  .h-stat:nth-last-child(-n+2){ border-bottom:none; }
+  .h-stat, .h-stat + .h-stat{ padding:16px 14px !important; border:none !important; border-bottom:1px solid rgba(200,146,42,.2) !important; text-align:left; }
+  .h-stat:nth-child(odd){ border-right:1px solid rgba(200,146,42,.2) !important; }
+  .h-stat:nth-last-child(-n+2){ border-bottom:none !important; }
   .certs-row{ grid-template-columns:1fr 1fr; }
   .cert-label{ display:none; }
   .cert-item{ padding:16px; border-right:none; border-bottom:1px solid var(--line); }
