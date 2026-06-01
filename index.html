@@ -1117,7 +1117,15 @@ footer ul a:hover::before{ opacity:1; margin-right:0; }
   .sec{ padding:64px 0; }
   .hero{ padding-top:76px; padding-bottom:16px; overflow:hidden; min-height:unset; justify-content:flex-start; }
   .hero-grid{ gap:0; }
-  .hero-stats{ grid-template-columns:1fr 1fr; gap:16px; margin-top:16px; }
+  .hero-stats{ grid-template-columns:1fr 1fr; gap:0; margin-top:16px; border:1px solid rgba(200,146,42,.2); border-radius:8px; overflow:hidden; }
+  .h-stat{ padding:16px 14px; border-left:none !important; border-right:none; border-bottom:1px solid rgba(200,146,42,.2); }
+  .h-stat:nth-child(odd){ border-right:1px solid rgba(200,146,42,.2); }
+  .h-stat:nth-last-child(-n+2){ border-bottom:none; }
+  .certs-row{ grid-template-columns:1fr 1fr; }
+  .cert-label{ display:none; }
+  .cert-item{ padding:16px; border-right:none; border-bottom:1px solid var(--line); }
+  .cert-item:nth-child(odd){ border-right:1px solid var(--line); }
+  .cert-item:nth-last-child(-n+2){ border-bottom:none; }
   .hero-eyebrow{ margin-bottom:16px; }
   .hero h1{ margin-bottom:12px; }
   .hero-deva{ margin-bottom:16px; }
