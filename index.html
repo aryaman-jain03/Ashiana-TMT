@@ -1,0 +1,2673 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="icon" type="image/png" href="assets/favicon.png"/>
+<title>Ashiana TMT</title>
+<meta name="description" content="Ashiana TMT Fe550 SD bars by KSAL deliver superior strength, earthquake resistance, and BIS-certified quality for homes and infrastructure across India."/>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WGNN8S3L');</script>
+<!-- End Google Tag Manager -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<!-- Ethnocentric font — local copy so it always loads -->
+<style>
+@font-face {
+  font-family: 'Ethnocentric';
+  font-style: normal;
+  font-weight: 400;
+  src: url('assets/ethnocentric.woff') format('woff');
+  font-display: swap;
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=Noto+Serif+Devanagari:wght@400;500;600;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet"/>
+
+<!-- GSAP + plugins -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+<!-- Lenis smooth scroll -->
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<!-- SplitType for text splitting -->
+<script src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js"></script>
+
+<style>
+/* ═══════════════════════════════════════════
+   TOKENS
+═══════════════════════════════════════════ */
+:root {
+  --bg:       #090806;
+  --bg-1:     #0f0e0b;
+  --bg-2:     #161410;
+  --bg-3:     #1e1b15;
+  --line:     #262218;
+  --line-2:   #322d22;
+  --ink:      #F0EBE0;
+  --ink-2:    #BEB8A8;
+  --ink-3:    #7A7466;
+  --ink-4:    #4A4438;
+  --gold-1:   #F5D060;
+  --gold-2:   #C8922A;
+  --gold-3:   #9A6B1E;
+  --gold-4:   #6A4810;
+  --gold-dim: rgba(200,146,42,0.15);
+  --f-sans:   "Geist", ui-sans-serif, system-ui, sans-serif;
+  --f-serif:  "Instrument Serif", Georgia, serif;
+  --f-deva:   "Noto Serif Devanagari", serif;
+  --ease-out: cubic-bezier(0.16,1,0.3,1);
+  --ease-spring: cubic-bezier(0.34,1.56,0.64,1);
+  --maxw: 1340px;
+  --px: 72px;
+}
+@media(max-width:1024px){ :root{ --px:32px; } }
+@media(max-width:640px) { :root{ --px:20px; } }
+
+/* ═══════════════════════════════════════════
+   RESET
+═══════════════════════════════════════════ */
+*,*::before,*::after{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--f-sans);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  line-height:1.5;
+  overflow-x:hidden;
+}
+a{ color:inherit; text-decoration:none; }
+img{ max-width:100%; display:block; }
+button{ font:inherit; cursor:pointer; border:0; background:0; }
+
+/* ═══════════════════════════════════════════
+   SCROLLBAR
+═══════════════════════════════════════════ */
+::-webkit-scrollbar{ width:3px; }
+::-webkit-scrollbar-track{ background:var(--bg); }
+::-webkit-scrollbar-thumb{ background:var(--gold-3); border-radius:999px; }
+
+/* ═══════════════════════════════════════════
+   LAYOUT
+═══════════════════════════════════════════ */
+.wrap{ max-width:var(--maxw); margin:0 auto; padding-left:var(--px); padding-right:var(--px); }
+
+/* ═══════════════════════════════════════════
+   SCROLL PROGRESS
+═══════════════════════════════════════════ */
+#progress{
+  position:fixed; top:0; left:0; right:0; height:2px; z-index:999;
+  background:linear-gradient(90deg, var(--gold-4), var(--gold-2), var(--gold-1));
+  transform-origin:left; transform:scaleX(0);
+  box-shadow:0 0 10px rgba(200,146,42,.6);
+  pointer-events:none;
+}
+
+/* cursor removed */
+/* ── Ethnocentric brand name ── */
+.brand-text .name,
+.footer-brand .fb-name {
+  font-family: 'Ethnocentric', 'Orbitron', sans-serif !important;
+  letter-spacing: .06em;
+}
+
+/* ── TMT mark — red + Ethnocentric ── */
+.tmt {
+  font-family: 'Ethnocentric', 'Orbitron', sans-serif !important;
+  color: #D42B2B !important;
+  font-style: normal !important;
+  -webkit-text-fill-color: #D42B2B !important;
+  background: none !important;
+  letter-spacing: .05em;
+}
+
+
+/* ═══════════════════════════════════════════
+   UTILITY BAR
+═══════════════════════════════════════════ */
+.util{
+  position:relative; z-index:60;
+  border-bottom:1px solid var(--line);
+  background:var(--bg-1);
+  font-size:11px; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--ink-3);
+  font-variant-numeric:tabular-nums;
+}
+.util .wrap{ display:flex; justify-content:space-between; align-items:center; height:36px; }
+.util .r{ display:flex; gap:28px; }
+.util a{ transition:color .2s; }
+.util a:hover{ color:var(--gold-2); }
+.util-dot{
+  display:inline-block; width:5px; height:5px; border-radius:50%;
+  background:var(--gold-2); margin-right:10px; vertical-align:middle;
+  animation:pulse 2.4s ease-in-out infinite;
+}
+@keyframes pulse{ 0%,100%{ opacity:1;transform:scale(1); } 50%{ opacity:.4;transform:scale(.6); } }
+
+/* ═══════════════════════════════════════════
+   NAV
+═══════════════════════════════════════════ */
+.nav{
+  position:sticky; top:0; z-index:1001;
+  border-bottom:1px solid var(--line);
+  background:color-mix(in oklab, var(--bg) 80%, transparent);
+  backdrop-filter:saturate(180%) blur(20px);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);
+  transition:box-shadow .4s ease, background .4s ease;
+}
+.nav.solid{
+  background:var(--bg-1);
+  box-shadow:0 8px 48px rgba(0,0,0,.6);
+}
+.nav .wrap{
+  display:grid;
+  grid-template-columns: auto 1fr auto;
+  align-items:center; height:78px; gap:40px;
+}
+
+/* Logo brand */
+.brand{ display:flex; align-items:center; gap:14px; }
+.brand-logo{
+  width:auto; height:58px; flex-shrink:0; display:block;
+  transition:transform .5s var(--ease-spring), filter .4s ease;
+  filter:drop-shadow(0 2px 10px rgba(200,146,42,.35));
+  object-fit:contain;
+}
+.brand:hover .brand-logo{
+  transform:scale(1.1) rotate(-3deg);
+  filter:drop-shadow(0 4px 20px rgba(200,146,42,.6));
+}
+.brand-text .name{
+  font-family:'Ethnocentric','Orbitron',sans-serif;
+  font-weight:400; font-size:18px; letter-spacing:.07em; line-height:1;
+  background:linear-gradient(135deg, var(--gold-1) 0%, var(--gold-2) 60%, var(--gold-3) 100%);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+}
+.brand-text .sub{
+  font-size:9.5px; letter-spacing:.2em; text-transform:uppercase;
+  color:var(--ink-3); margin-top:3px;
+}
+/* Hero logo text — larger version of the navbar brand */
+.hero-brand-text {
+  display:flex; flex-direction:column; align-items:center;
+  margin-bottom:-72px; text-align:center;
+  transform:translate(10px, 40px);
+  position:relative; z-index:3;
+}
+.hero-brand-logo1 {
+  width:clamp(420px, 46vw, 740px);
+  height:auto;
+  object-fit:contain;
+  display:block;
+  filter:drop-shadow(0 4px 20px rgba(200,146,42,.4));
+}
+.hero-brand-text .name {
+  font-family:'Ethnocentric','Orbitron',sans-serif;
+  font-weight:400; font-size:clamp(28px,3.8vw,56px);
+  letter-spacing:.1em; line-height:1;
+  background:linear-gradient(135deg, var(--gold-1) 0%, var(--gold-2) 60%, var(--gold-3) 100%);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+}
+.hero-brand-text .sub {
+  font-size:11px; letter-spacing:.28em; text-transform:uppercase;
+  color:var(--ink-3); margin-top:8px;
+}
+.hero-brand-sub {
+  font-size:13px; letter-spacing:.22em; text-transform:uppercase;
+  color:var(--ink-3); margin-top:10px;
+}
+/* ® superscript inside logo name — inherits gradient, stays small */
+/* ® inside gradient-clipped headings (navbar, hero brand) */
+sup.tm-sup {
+  font-size: 42%;
+  top: -0.75em;
+  position: relative;
+  font-weight: 400;
+  letter-spacing: 0;
+  font-family: sans-serif;
+  /* override any inherited -webkit-text-fill-color:transparent from gradient parents */
+  -webkit-text-fill-color: var(--gold-2);
+  background: none;
+}
+
+/* ® inside body text / headings */
+.tm-reg {
+  font-size: 65%;
+  vertical-align: super;
+  /* ensure it's always visible regardless of parent gradient clipping */
+  -webkit-text-fill-color: currentColor;
+  background: none;
+}
+
+/* Nav links */
+.nav-links{ display:flex; gap:0; justify-content:center; }
+.nav-links a{
+  font-size:13.5px; font-weight:500; color:var(--ink-3);
+  padding:8px 18px; border-radius:6px; position:relative;
+  transition:color .25s ease;
+}
+.nav-links a::after{
+  content:''; position:absolute; bottom:2px; left:18px; right:18px;
+  height:1px; background:var(--gold-2); transform:scaleX(0);
+  transition:transform .3s var(--ease-out);
+}
+.nav-links a:hover{ color:var(--ink); }
+.nav-links a:hover::after,
+.nav-links a.active::after{ transform:scaleX(1); }
+.nav-links a.active{ color:var(--ink); }
+
+.nav-cta{ display:flex; gap:12px; align-items:center; }
+.nav-cta .btn{
+  background:#ffffff; color:#0A0806;
+  box-shadow:0 2px 12px rgba(0,0,0,.12);
+  border-color:transparent;
+}
+.nav-cta .btn:hover{
+  background:linear-gradient(135deg, var(--gold-1) 0%, var(--gold-2) 55%, var(--gold-3) 100%);
+  color:#0A0806;
+  box-shadow:0 4px 24px rgba(200,146,42,.5);
+}
+
+/* Buttons */
+.btn{
+  display:inline-flex; align-items:center; gap:9px;
+  padding:11px 22px; border-radius:999px; font-size:13.5px; font-weight:600;
+  border:1px solid transparent; position:relative; overflow:hidden;
+  transition:transform .25s var(--ease-spring), box-shadow .25s ease, background .25s ease, border-color .25s ease, color .25s ease;
+  cursor:pointer; letter-spacing:.01em;
+}
+.btn::before{
+  content:''; position:absolute; inset:0; border-radius:inherit;
+  background:radial-gradient(circle at var(--bx,50%) var(--by,50%), rgba(255,255,255,.18) 0%, transparent 55%);
+  opacity:0; transition:opacity .3s;
+}
+.btn:hover::before{ opacity:1; }
+.btn:hover{ transform:translateY(-2px); }
+.btn:active{ transform:translateY(0) scale(.98); }
+.btn-gold{
+  background:linear-gradient(135deg, var(--gold-1) 0%, var(--gold-2) 55%, var(--gold-3) 100%);
+  color:#0A0806;
+  box-shadow:0 2px 16px rgba(200,146,42,.35);
+}
+.btn-gold:hover{ box-shadow:0 6px 30px rgba(200,146,42,.55); }
+.btn-outline{
+  background:transparent; color:var(--ink-2);
+  border-color:var(--line-2);
+}
+.btn-outline:hover{ background:var(--bg-2); border-color:var(--ink-4); color:var(--ink); }
+
+.btn-arrow{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:32px; height:32px; border-radius:50%;
+  background:var(--bg-3); border:1px solid var(--line-2);
+  font-size:14px; color:var(--ink-3);
+  transition:background .25s, border-color .25s, color .25s, transform .3s var(--ease-spring);
+  flex-shrink:0;
+}
+
+/* ═══════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════ */
+.hero{
+  position:relative; overflow:hidden;
+  min-height:100svh;
+  display:flex; flex-direction:column; justify-content:flex-end;
+  padding-bottom:80px;
+  isolation:isolate;
+}
+/* Parallax layers */
+.hero-layer{
+  position:absolute; inset:-25% -5%;
+  pointer-events:none; will-change:transform;
+}
+.hero-layer-img{
+  width:100%; height:100%;
+  background:
+    url('assets/hero section.png') center/cover no-repeat;
+  filter:brightness(.58) saturate(.75) contrast(1.08);
+}
+.hero-layer-color{
+  position:absolute; inset:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 65% 40%, rgba(200,146,42,.12) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 80% at 10% 60%, rgba(200,146,42,.06) 0%, transparent 50%);
+}
+.hero-overlay{
+  position:absolute; inset:0; z-index:1; pointer-events:none;
+  background:
+    linear-gradient(100deg, rgba(9,8,6,.98) 0%, rgba(9,8,6,.92) 28%, rgba(9,8,6,.55) 58%, rgba(9,8,6,.1) 82%),
+    linear-gradient(180deg, rgba(9,8,6,.4) 0%, transparent 18%, transparent 65%, rgba(9,8,6,1) 100%);
+}
+/* Dot grid */
+.hero-dots{
+  position:absolute; inset:0; z-index:2; pointer-events:none;
+  background-image:radial-gradient(circle, rgba(200,146,42,.22) 1px, transparent 1px);
+  background-size:36px 36px;
+  mask-image:radial-gradient(ellipse 70% 90% at 75% 50%, rgba(0,0,0,.7) 0%, transparent 65%);
+  -webkit-mask-image:radial-gradient(ellipse 70% 90% at 75% 50%, rgba(0,0,0,.7) 0%, transparent 65%);
+}
+/* Noise grain */
+.hero-grain{
+  position:absolute; inset:0; z-index:2; pointer-events:none; opacity:.35;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='.06'/%3E%3C/svg%3E");
+  background-size:200px 200px;
+}
+
+.hero .wrap{ position:relative; z-index:3; }
+.hero-grid{ display:grid; grid-template-columns:1.1fr .9fr; grid-template-rows:auto auto; gap:0 64px; }
+.hero-top{ grid-column:1; grid-row:1; }
+.hero-bottom{ grid-column:1; grid-row:2; }
+.hero-right{ grid-column:2; grid-row:1 / span 2; align-self:center; }
+
+/* Eyebrow */
+.hero-eyebrow{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-bottom:36px; opacity:0; }
+.pill{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:6px 14px; border-radius:999px; font-size:10.5px;
+  letter-spacing:.12em; text-transform:uppercase; font-weight:500;
+  border:1px solid rgba(200,146,42,.3); background:rgba(200,146,42,.08);
+  color:rgba(245,208,96,.9); backdrop-filter:blur(10px);
+  transition:border-color .3s, background .3s;
+}
+.pill:hover{ border-color:rgba(200,146,42,.6); background:rgba(200,146,42,.14); }
+.pill .pdot{ width:5px; height:5px; border-radius:50%; background:var(--gold-2); flex-shrink:0; }
+.india-pill{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:6px 14px; border-radius:999px; font-size:10.5px;
+  letter-spacing:.12em; text-transform:uppercase;
+  border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.04);
+  color:rgba(240,235,224,.65); backdrop-filter:blur(10px);
+}
+.flag{ display:inline-flex; align-items:center; justify-content:center; width:22px; height:15px; border-radius:2px; overflow:hidden; border:1px solid rgba(255,255,255,.25); position:relative; vertical-align:middle; flex-shrink:0; }
+
+/* Hero h1 */
+.hero h1{
+  font-size:clamp(44px,6vw,96px);
+  font-weight:700; line-height:.93; letter-spacing:-.04em;
+  margin:0 0 32px; color:var(--ink);
+  /* no overflow:hidden here — descenders need room */
+  padding-bottom:.22em;
+}
+.hero h1 .word{ display:inline-block; overflow:hidden; padding-bottom:.32em; margin-bottom:-.32em; }
+.hero h1 .word-inner{ display:inline-block; }
+.hero h1 .it{
+  font-family:var(--f-serif); font-style:italic; font-weight:400;
+  letter-spacing:-.025em;
+  background:linear-gradient(120deg, var(--gold-1) 0%, var(--gold-2) 60%, var(--gold-3) 100%);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+}
+
+.hero-deva{
+  font-family:var(--f-deva); font-size:clamp(20px,2.4vw,30px);
+  color:var(--gold-2); font-weight:500; letter-spacing:.02em;
+  text-shadow:0 0 40px rgba(200,146,42,.5); margin-bottom:44px;
+  opacity:0;
+}
+.hero-cta{ display:flex; gap:14px; align-items:center; opacity:0; }
+
+/* Hero right: logo showcase */
+.hero-right{ display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0; opacity:0; }
+.logo-showcase{
+  position:relative;
+  display:flex; align-items:center; justify-content:center;
+  margin-top:20px;
+}
+/* Orbiting rings */
+.orbit{
+  position:absolute; border-radius:50%; border:1px solid transparent;
+  pointer-events:none;
+}
+.orbit-1{
+  inset:-10px;
+  border-color:rgba(200,146,42,.12);
+  animation:spin 25s linear infinite;
+}
+.orbit-2{
+  inset:-30px;
+  border-color:transparent;
+  border-top-color:rgba(200,146,42,.2);
+  border-right-color:rgba(200,146,42,.08);
+  animation:spin 40s linear infinite reverse;
+}
+.orbit-3{
+  inset:-55px;
+  border:1px dashed rgba(200,146,42,.07);
+  animation:spin 60s linear infinite;
+}
+/* Glow blob */
+.logo-glow{
+  position:absolute; inset:-20px; border-radius:50%;
+  background:radial-gradient(circle, rgba(200,146,42,.18) 0%, transparent 70%);
+  animation:glow-pulse 3s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes spin{ to{ transform:rotate(360deg); } }
+@keyframes glow-pulse{ 0%,100%{ opacity:.6;transform:scale(1); } 50%{ opacity:1;transform:scale(1.06); } }
+
+.logo-img-wrap{
+  position:relative; z-index:2;
+  width:620px; height:620px;
+  transition:transform .5s var(--ease-spring);
+  cursor:pointer;
+}
+.logo-img-wrap:hover{ transform:scale(1.06) translateY(-8px); }
+.logo-img-wrap:hover .logo-glow{ opacity:1.4; }
+.logo-main{
+  width:100%; height:100%;
+  object-fit:contain;
+  filter:drop-shadow(0 8px 40px rgba(200,146,42,.55)) drop-shadow(0 2px 8px rgba(0,0,0,.8));
+  transition:filter .5s ease;
+}
+.logo-main:hover{ filter:drop-shadow(0 16px 60px rgba(200,146,42,.75)) drop-shadow(0 4px 16px rgba(0,0,0,.9)); }
+/* Fallback SVG logo shown when img fails */
+.logo-fallback{ display:none; width:100%; height:100%; }
+.logo-main.errored{ display:none; }
+.logo-main.errored + .logo-fallback{ display:block; }
+
+.logo-caption{
+  position:absolute; bottom:-32px; left:50%; transform:translateX(-50%);
+  font-size:10px; letter-spacing:.22em; text-transform:uppercase;
+  color:var(--ink-3); white-space:nowrap;
+}
+
+/* Hero stats */
+.hero-stats{
+  display:grid; grid-template-columns:repeat(4,1fr);
+  gap:0; margin-top:80px;
+  border-top:1px solid rgba(200,146,42,.2);
+  padding-top:40px;
+  opacity:0;
+}
+.h-stat{ position:relative; padding-right:24px; }
+.h-stat + .h-stat{ padding-left:24px; border-left:1px solid var(--line-2); }
+.h-stat .sk{ font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:var(--gold-2); margin-bottom:10px; }
+.h-stat .sv{ font-size:clamp(24px,2.8vw,36px); font-weight:700; letter-spacing:-.025em; line-height:1.05; color:var(--ink); margin-bottom:6px; }
+.h-stat .sd{ font-size:13px; color:var(--ink-3); line-height:1.4; }
+
+/* ═══════════════════════════════════════════
+   MARQUEE STRIP
+═══════════════════════════════════════════ */
+.marquee-strip{
+  border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+  background:var(--bg-1); overflow:hidden; padding:14px 0;
+}
+.marquee-track{
+  display:flex; gap:0; width:max-content;
+  animation:marquee 30s linear infinite;
+}
+.marquee-track:hover{ animation-play-state:paused; }
+.marquee-item{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:0 12px; font-size:11px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--ink-3); white-space:nowrap;
+}
+.marquee-item .msep{ color:var(--gold-2); opacity:.5; }
+@keyframes marquee{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+
+/* ═══════════════════════════════════════════
+   SECTION SYSTEM
+═══════════════════════════════════════════ */
+.sec{ padding:140px 0; }
+.sec-bg1{ background:var(--bg-1); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.sec-bg2{ background:var(--bg-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+
+.section-label{
+  display:inline-flex; align-items:center; gap:10px; margin-bottom:20px;
+  font-size:10.5px; letter-spacing:.18em; text-transform:uppercase; color:var(--ink-3);
+}
+.section-label .n{ color:var(--gold-2); }
+.section-label::before{
+  content:''; width:24px; height:1px; background:var(--gold-3); flex-shrink:0;
+}
+
+.section-h{
+  font-size:clamp(38px,4.8vw,68px); font-weight:700;
+  letter-spacing:-.035em; line-height:1.01; margin:0;
+}
+.section-h .it{
+  font-family:var(--f-serif); font-style:italic; font-weight:400;
+  background:linear-gradient(120deg, var(--gold-1) 0%, var(--gold-2) 70%, var(--gold-3) 100%);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+}
+
+/* two-col head */
+.head-split{ display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:end; margin-bottom:80px; }
+.head-blurb{ font-size:17px; color:var(--ink-2); line-height:1.7; max-width:48ch; }
+
+/* ═══════════════════════════════════════════
+   ABOUT
+═══════════════════════════════════════════ */
+.about-grid{ display:grid; grid-template-columns:1.25fr 0.75fr; gap:80px; align-items:stretch; }
+.about-copy p{ font-size:18px; line-height:1.75; color:var(--ink-2); margin:0 0 26px; max-width:52ch; }
+.about-copy p:last-child{ margin:0; }
+
+/* Brand card */
+.brand-card{
+  border:1px solid var(--line-2); border-radius:16px;
+  padding:56px 40px;
+  background:
+    radial-gradient(120% 80% at 50% 0%, rgba(200,146,42,.1) 0%, transparent 60%),
+    #080706;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; gap:16px; position:relative; overflow:hidden;
+  transition:border-color .4s ease, box-shadow .4s ease;
+}
+.brand-card:hover{
+  border-color:rgba(200,146,42,.5);
+  box-shadow:0 0 80px rgba(200,146,42,.12), inset 0 0 40px rgba(200,146,42,.04);
+}
+.brand-card::before, .brand-card::after{
+  content:''; position:absolute; left:28px; right:28px; height:1px;
+  background:linear-gradient(90deg, transparent, rgba(200,146,42,.35), transparent);
+}
+.brand-card::before{ top:20px; }
+.brand-card::after{ bottom:20px; }
+.brand-card .bc-logo{ width:160px; height:190px; object-fit:contain; filter:drop-shadow(0 4px 24px rgba(200,146,42,.45)); }
+.brand-card .bc-logo.errored{ display:none; }
+.brand-card .bc-deva{ font-family:var(--f-deva); font-size:19px; font-weight:600; color:var(--gold-2); font-style:italic; line-height:1.3; }
+.brand-card .bc-sep{ width:36px; height:1px; background:linear-gradient(90deg, transparent, var(--gold-3), transparent); }
+.brand-card .bc-foot{ font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3); }
+
+/* ═══════════════════════════════════════════
+   FEATURES
+═══════════════════════════════════════════ */
+.features-grid{ display:grid; grid-template-columns:repeat(3,1fr); }
+.feat{
+  padding:0;
+  border-right:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  position:relative; overflow:hidden;
+  transition:background .3s ease;
+  display:flex; flex-direction:column;
+}
+.feat:nth-child(3n){ border-right:0; }
+.feat:nth-child(n+4){ border-bottom:0; }
+
+/* image at top */
+.feat-img-wrap{
+  width:100%; height:220px; overflow:hidden; flex-shrink:0; position:relative;
+}
+.feat-img{
+  width:100%; height:100%; object-fit:cover; display:block;
+  transition:transform .8s var(--ease-out), filter .5s ease;
+  filter:brightness(.85) saturate(.75);
+}
+.feat:hover .feat-img{ transform:scale(1.07); filter:brightness(.95) saturate(.9); }
+/* dim overlay on image */
+.feat-img-wrap::after{
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(9,8,6,.15) 0%, rgba(9,8,6,.55) 100%);
+  transition:background .4s;
+}
+.feat:hover .feat-img-wrap::after{ background:linear-gradient(180deg, rgba(9,8,6,.05) 0%, rgba(9,8,6,.35) 100%); }
+
+/* text body */
+.feat-body{ padding:36px 40px 52px; flex:1; position:relative; }
+
+/* top accent line */
+.feat::before{
+  content:''; position:absolute; top:0; left:0; right:0; height:2px; z-index:2;
+  background:linear-gradient(90deg, var(--gold-3), var(--gold-1), var(--gold-3));
+  transform:scaleX(0) translateZ(0); transform-origin:left;
+  transition:transform .5s var(--ease-out);
+}
+.feat:hover::before{ transform:scaleX(1); }
+.feat:hover{ background:rgba(200,146,42,.03); }
+
+.feat-n{ font-size:10.5px; letter-spacing:.16em; color:var(--gold-2); margin-bottom:40px; }
+.feat h4{
+  font-size:clamp(26px,2.6vw,36px); font-weight:700;
+  letter-spacing:-.03em; line-height:1.04; margin:0;
+  color:var(--ink); transition:color .25s;
+}
+.feat:hover h4{ color:var(--gold-1); }
+
+/* Map section */
+.map-section{
+  margin-top:80px;
+  width:100%;
+  border-radius:16px;
+  overflow:hidden;
+  line-height:0;
+}
+.map-img{
+  width:100%;
+  height:auto;
+  display:block;
+  object-fit:cover;
+}
+@media(max-width:768px){
+  .map-section{ margin-top:56px; border-radius:12px; }
+}
+@media(max-width:480px){
+  .map-section{ margin-top:40px; border-radius:8px; }
+}
+
+/* ═══════════════════════════════════════════
+   APPLICATIONS
+═══════════════════════════════════════════ */
+.apps-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+.app-card{
+  position:relative; overflow:hidden;
+  border-radius:12px; border:1px solid var(--line);
+  aspect-ratio:3/4; background:var(--bg-2);
+  display:flex; flex-direction:column; justify-content:flex-end;
+  transition:transform .4s var(--ease-out), border-color .4s ease, box-shadow .4s ease;
+  cursor:pointer;
+}
+.app-card:hover{
+  transform:translateY(-10px) scale(1.01);
+  border-color:rgba(200,146,42,.5);
+  box-shadow:0 20px 60px rgba(0,0,0,.6), 0 0 0 1px rgba(200,146,42,.15);
+}
+.app-card-img{
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; z-index:0;
+  transition:transform .7s var(--ease-out), filter .5s ease;
+}
+.app-card:hover .app-card-img{
+  transform:scale(1.1);
+  filter:brightness(1.08) saturate(1.15);
+}
+.app-card-overlay{
+  position:absolute; inset:0; z-index:1; pointer-events:none;
+  background:linear-gradient(180deg,
+    rgba(0,0,0,.05) 0%,
+    rgba(0,0,0,.05) 25%,
+    rgba(9,8,6,.5) 55%,
+    rgba(9,8,6,.96) 100%);
+  transition:background .4s;
+}
+.app-card:hover .app-card-overlay{
+  background:linear-gradient(180deg,
+    rgba(0,0,0,.04) 0%,
+    rgba(0,0,0,.04) 20%,
+    rgba(9,8,6,.4) 50%,
+    rgba(9,8,6,.93) 100%);
+}
+.app-num{
+  position:absolute; top:18px; left:20px; z-index:2;
+  font-size:10px; letter-spacing:.18em; text-transform:uppercase;
+  color:rgba(255,255,255,.75);
+}
+.app-body{ position:relative; z-index:2; padding:20px 22px 24px; }
+.app-body h4{
+  font-size:22px; font-weight:700; letter-spacing:-.02em; line-height:1.1;
+  margin:0 0 12px; color:#FBF9F4;
+  text-shadow:0 2px 12px rgba(0,0,0,.5);
+}
+.app-cta{
+  display:inline-flex; align-items:center; gap:8px;
+  font-size:11.5px; letter-spacing:.1em; text-transform:uppercase;
+  color:rgba(245,208,96,.85);
+  transform:translateY(6px); opacity:0;
+  transition:transform .35s var(--ease-out), opacity .35s ease;
+}
+.app-card:hover .app-cta{ transform:translateY(0); opacity:1; }
+
+/* ═══════════════════════════════════════════
+   CERTS / TRUST
+═══════════════════════════════════════════ */
+.certs-row{
+  display:grid; grid-template-columns:.55fr repeat(5,1fr);
+  gap:0; align-items:stretch;
+}
+.cert-label{
+  font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--ink-4); display:flex; align-items:center;
+  border-right:1px solid var(--line); padding-right:32px;
+}
+.cert-item{
+  padding:24px 28px; border-right:1px solid var(--line);
+  transition:background .25s ease, border-color .25s;
+  cursor:default;
+}
+.cert-item:last-child{ border-right:0; }
+.cert-item:hover{ background:rgba(200,146,42,.04); border-right-color:rgba(200,146,42,.3); }
+.cert-item strong{
+  display:block; font-size:15px; font-weight:600; color:var(--ink);
+  margin-bottom:4px; letter-spacing:-.01em;
+  transition:color .25s;
+}
+.cert-item:hover strong{ color:var(--gold-1); }
+.cert-item span{ font-size:12px; color:var(--ink-3); }
+
+/* ═══════════════════════════════════════════
+   COUNTER SECTION
+═══════════════════════════════════════════ */
+.counters-wrap{
+  display:grid; grid-template-columns:repeat(4,1fr);
+  gap:0;
+}
+.counter-item{
+  padding:60px 40px;
+  border-right:1px solid var(--line);
+  position:relative; overflow:hidden;
+  transition:background .3s;
+}
+.counter-item:last-child{ border-right:0; }
+.counter-item::before{
+  content:''; position:absolute; bottom:0; left:0; right:0; height:2px;
+  background:linear-gradient(90deg, transparent, var(--gold-2), transparent);
+  transform:scaleX(0); transform-origin:center;
+  transition:transform .5s var(--ease-out);
+}
+.counter-item:hover::before{ transform:scaleX(1); }
+.counter-item:hover{ background:rgba(200,146,42,.03); }
+.counter-n{
+  font-size:clamp(44px,5vw,72px); font-weight:800;
+  letter-spacing:-.04em; line-height:1; margin:0 0 10px;
+  background:linear-gradient(120deg, var(--gold-1), var(--gold-2));
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+}
+.counter-label{ font-size:14px; color:var(--ink-3); font-weight:500; }
+.counter-sub{ font-size:12px; color:var(--ink-4); margin-top:4px; }
+
+/* ═══════════════════════════════════════════
+   CONTACT SECTION
+═══════════════════════════════════════════ */
+.contact-sec{
+  position:relative; overflow:hidden;
+  background:#c8c8c8;
+  color:#0A0806; padding:0;
+}
+.contact-parallax-bg{
+  position:absolute; inset:-20%;
+  background:
+    url('assets/touch.jpeg') center 55%/cover no-repeat,
+    url('https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
+  filter:brightness(1.05) saturate(.5) contrast(1.0);
+  opacity:.75;
+  will-change:transform; pointer-events:none;
+}
+/* Soft vignette so edges stay readable */
+.contact-inner{
+  position:relative; z-index:1;
+  background:linear-gradient(
+    108deg,
+    rgba(255,253,250,.72) 0%,
+    rgba(248,244,238,.62) 40%,
+    rgba(240,236,228,.58) 100%
+  );
+}
+.contact-inner .wrap{
+  padding-top:120px; padding-bottom:120px;
+  display:grid; grid-template-columns:.62fr 1.38fr; gap:80px; align-items:start;
+}
+
+/* ── Left column typography ── */
+.contact-left .cl-label{
+  display:inline-flex; align-items:center; gap:10px;
+  font-size:10.5px; letter-spacing:.22em; text-transform:uppercase;
+  font-weight:700; color:var(--gold-3); margin-bottom:20px;
+}
+.contact-left .cl-label::before{
+  content:''; width:22px; height:2px;
+  background:linear-gradient(90deg, var(--gold-2), var(--gold-1));
+  border-radius:999px; flex-shrink:0;
+}
+.contact-left h2{
+  font-size:clamp(46px,5.2vw,78px); font-weight:800;
+  letter-spacing:-.04em; line-height:.92; margin:0; color:#0d0b08;
+}
+.contact-left h2 .it{
+  font-family:var(--f-serif); font-style:italic; font-weight:400;
+  color:var(--gold-2); font-size:1.06em; letter-spacing:-.02em;
+}
+.contact-gold-line{
+  width:52px; height:3px; border-radius:999px; margin:26px 0 26px;
+  background:linear-gradient(90deg, var(--gold-2), var(--gold-1), var(--gold-2));
+}
+.contact-left .cl-sub{
+  font-size:16px; font-weight:400;
+  color:rgba(10,8,6,.68); line-height:1.7; max-width:36ch; margin-bottom:44px;
+}
+.contact-detail{ margin-bottom:26px; }
+.contact-detail .dk{
+  display:inline-flex; align-items:center; gap:8px;
+  font-size:10px; letter-spacing:.2em; text-transform:uppercase;
+  font-weight:700; color:var(--gold-3); margin-bottom:8px;
+}
+.contact-detail .dk::before{
+  content:''; width:14px; height:1.5px;
+  background:var(--gold-2); border-radius:999px;
+}
+.contact-detail .dv{ font-size:18px; font-weight:600; color:#0d0b08; letter-spacing:-.01em; }
+.contact-detail .dv a{ transition:color .2s; }
+.contact-detail .dv a:hover{ color:var(--gold-3); }
+
+/* ── Form panel (glass card) ── */
+.contact-form-anim{
+  background:rgba(255,253,250,.86);
+  border:1px solid rgba(200,146,42,.22);
+  border-radius:20px;
+  padding:52px 48px;
+  box-shadow:0 8px 60px rgba(0,0,0,.12), 0 1px 0 rgba(255,255,255,.9) inset;
+  backdrop-filter:blur(10px);
+}
+.contact-form{ display:grid; grid-template-columns:1fr 1fr; gap:22px 32px; }
+.cf-full{ grid-column:1/-1; }
+.cf-label{
+  font-size:10px; letter-spacing:.18em; text-transform:uppercase;
+  font-weight:700; color:var(--gold-3); margin-bottom:10px; display:block;
+}
+.cf-input, .cf-select, .cf-textarea{
+  width:100%; background:transparent;
+  border:0; border-bottom:1.5px solid rgba(10,8,6,.15);
+  color:#0d0b08; font:inherit; font-size:15.5px; font-weight:500;
+  padding:10px 0 14px; outline:0;
+  transition:border-color .25s ease;
+}
+.cf-input::placeholder, .cf-textarea::placeholder{ color:rgba(10,8,6,.3); font-weight:400; }
+.cf-input:focus, .cf-select:focus, .cf-textarea:focus{
+  border-bottom-color:var(--gold-2);
+}
+.cf-textarea{ resize:none; min-height:88px; }
+/* Validation error messages */
+.cf-err{
+  display:block; font-size:11.5px; color:#c0392b;
+  margin-top:5px; min-height:16px; letter-spacing:.01em;
+  opacity:0; transform:translateY(-4px);
+  transition:opacity .2s, transform .2s;
+}
+.cf-err.visible{ opacity:1; transform:translateY(0); }
+.cf-input.invalid, .cf-select.invalid{
+  border-bottom-color:#c0392b !important;
+  background:rgba(192,57,43,.04);
+}
+.cf-input.valid{ border-bottom-color:#1a7a3a !important; }
+.cf-submit{ grid-column:1/-1; display:flex; justify-content:flex-end; padding-top:12px; }
+
+/* ── Success panel ── */
+#cf-success{
+  grid-column: 1/-1;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 48px 32px 40px;
+  background: linear-gradient(135deg, rgba(26,122,58,.08) 0%, rgba(26,122,58,.04) 100%);
+  border: 1px solid rgba(26,122,58,.25);
+  border-radius: 16px;
+  animation: fadeSlideUp .5s var(--ease-out) both;
+}
+#cf-success .success-icon{
+  width: 64px; height: 64px;
+  background: linear-gradient(135deg, #1a7a3a, #27ae60);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 32px rgba(26,122,58,.3);
+}
+#cf-success .success-icon svg{ width:30px; height:30px; }
+#cf-success .success-title{
+  font-size: 22px; font-weight: 700;
+  color: #0d2b14; letter-spacing: -.02em;
+  margin: 0 0 8px;
+}
+#cf-success .success-sub{
+  font-size: 14px; color: rgba(10,8,6,.55);
+  line-height: 1.6; margin: 0 0 28px; max-width: 32ch;
+}
+#cf-success .success-sub strong{ color:#1a7a3a; }
+.cf-requery-btn{
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent;
+  border: 1.5px solid rgba(200,146,42,.5);
+  color: #7a5a1a;
+  padding: 11px 26px; border-radius: 999px;
+  font-size: 13.5px; font-weight: 600; letter-spacing: .02em;
+  cursor: pointer;
+  transition: background .25s, border-color .25s, color .25s, box-shadow .25s;
+}
+.cf-requery-btn:hover{
+  background: linear-gradient(120deg, var(--gold-1), var(--gold-2));
+  border-color: transparent; color: #0d0b08;
+  box-shadow: 0 4px 20px rgba(200,146,42,.4);
+}
+@keyframes fadeSlideUp{
+  from{ opacity:0; transform:translateY(16px); }
+  to  { opacity:1; transform:translateY(0); }
+}
+.cf-btn{
+  background:linear-gradient(120deg, var(--gold-1) 0%, var(--gold-2) 55%, var(--gold-3) 100%);
+  color:#0d0b08; border:0; padding:15px 32px; border-radius:999px;
+  font-size:14.5px; font-weight:700; letter-spacing:.04em; text-transform:uppercase;
+  display:inline-flex; align-items:center; gap:10px;
+  cursor:pointer; position:relative; overflow:hidden;
+  transition:transform .25s var(--ease-spring), box-shadow .25s ease;
+  box-shadow:0 4px 24px rgba(200,146,42,.45);
+}
+.cf-btn:hover{ transform:translateY(-3px); box-shadow:0 8px 36px rgba(200,146,42,.6); }
+.cf-btn::before{
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(120deg, #fff3 0%, transparent 60%);
+  opacity:0; transition:opacity .3s;
+}
+.cf-btn:hover::before{ opacity:1; }
+.cf-btn span{ position:relative; z-index:1; }
+
+/* ═══════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════ */
+footer{
+  padding:80px 0 44px;
+  background:#060504;
+  border-top:1px solid var(--line);
+}
+.footer-top{
+  display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr;
+  gap:48px; padding-bottom:56px; border-bottom:1px solid var(--line);
+}
+.footer-brand .fb-logo{
+  display:flex; align-items:center; gap:14px; margin-bottom:20px;
+}
+.footer-brand .fb-logo img{
+  width:44px; height:52px; object-fit:contain;
+  filter:drop-shadow(0 2px 10px rgba(200,146,42,.35));
+}
+.footer-brand .fb-name{
+  font-weight:700; font-size:22px; letter-spacing:-.01em;
+  background:linear-gradient(135deg, var(--gold-1), var(--gold-2));
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+}
+.footer-brand .fb-sub{
+  font-size:10px; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--ink-3); margin-top:2px;
+}
+.footer-brand p{ font-size:14px; color:var(--ink-4); line-height:1.65; max-width:30ch; margin:0 0 28px; }
+
+.footer-social-title{ font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3); margin-bottom:14px; }
+.footer-social-links{ display:flex; flex-wrap:wrap; gap:10px; }
+.footer-social-links a{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:40px; height:40px; border-radius:50%;
+  border:1px solid var(--line-2);
+  color:var(--ink-3);
+  transition:color .25s, border-color .25s, background .25s, transform .25s, box-shadow .25s;
+}
+.footer-social-links a svg{ width:18px; height:18px; fill:currentColor; display:block; }
+.footer-social-links a:hover{ transform:translateY(-3px); }
+/* Per-platform hover colours */
+.footer-social-links a.soc-ig:hover { background:#E1306C; border-color:#E1306C; color:#fff; box-shadow:0 6px 20px rgba(225,48,108,.35); }
+.footer-social-links a.soc-fb:hover { background:#1877F2; border-color:#1877F2; color:#fff; box-shadow:0 6px 20px rgba(24,119,242,.35); }
+.footer-social-links a.soc-x:hover  { background:#000;    border-color:#000;    color:#fff; box-shadow:0 6px 20px rgba(0,0,0,.35); }
+.footer-social-links a.soc-yt:hover { background:#FF0000; border-color:#FF0000; color:#fff; box-shadow:0 6px 20px rgba(255,0,0,.35); }
+.footer-social-links a.soc-li:hover { background:#0A66C2; border-color:#0A66C2; color:#fff; box-shadow:0 6px 20px rgba(10,102,194,.35); }
+
+footer h5{ font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3); margin:0 0 18px; font-weight:600; }
+footer ul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px; }
+footer ul a{
+  font-size:14px; color:var(--ink-4);
+  display:inline-flex; align-items:center; gap:0;
+  transition:color .2s, gap .2s;
+}
+footer ul a:hover{ color:var(--gold-2); gap:6px; }
+footer ul a::before{ content:'→'; opacity:0; font-size:12px; transition:opacity .2s; margin-right:-12px; }
+footer ul a:hover::before{ opacity:1; margin-right:0; }
+
+.footer-addr{ font-size:14px; line-height:1.7; color:var(--ink-4); }
+.footer-addr a{ color:var(--ink-4); transition:color .2s; }
+.footer-addr a:hover{ color:var(--gold-2); }
+
+.footer-bottom{
+  padding-top:32px; display:flex; justify-content:space-between; align-items:center;
+  font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-4);
+}
+
+/* ═══════════════════════════════════════════
+   HAMBURGER MENU
+═══════════════════════════════════════════ */
+.hamburger{
+  display:none; flex-direction:column; justify-content:center;
+  gap:5px; width:40px; height:40px; cursor:pointer;
+  background:none; border:none; padding:4px; z-index:1001;
+}
+.hamburger span{
+  display:block; height:2px; background:var(--ink-2);
+  border-radius:2px;
+  transition:transform .35s var(--ease-out), opacity .25s, width .3s;
+}
+.hamburger span:nth-child(1){ width:24px; }
+.hamburger span:nth-child(2){ width:18px; }
+.hamburger span:nth-child(3){ width:24px; }
+.hamburger.open span:nth-child(1){ transform:translateY(7px) rotate(45deg); width:24px; }
+.hamburger.open span:nth-child(2){ opacity:0; }
+.hamburger.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); width:24px; }
+
+/* Mobile nav drawer */
+.mobile-nav{
+  position:fixed; inset:0; z-index:999;
+  display:flex; flex-direction:column;
+  background:rgba(9,8,6,.97);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  padding:100px 32px 48px;
+  transform:translateX(100%);
+  transition:transform .4s var(--ease-out);
+  overflow-y:auto;
+}
+.mobile-nav.open{ transform:translateX(0); }
+.mobile-nav a{
+  font-size:clamp(24px,6vw,36px); font-weight:700;
+  color:var(--ink-2); padding:14px 0;
+  border-bottom:1px solid var(--line);
+  letter-spacing:-.02em;
+  transition:color .2s, padding-left .2s;
+  text-decoration:none; display:block;
+}
+.mobile-nav a:last-of-type{ border-bottom:0; }
+.mobile-nav a:hover{ color:var(--gold-1); padding-left:8px; }
+.mobile-nav .mob-cta{
+  margin-top:40px;
+}
+.mobile-nav .mob-cta .btn{
+  width:100%; justify-content:center;
+  font-size:16px; padding:16px 24px;
+  color:#0A0806 !important;
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════ */
+
+/* ── Large desktop ── */
+@media(max-width:1280px){
+  .contact-inner .wrap{ gap:48px; }
+}
+
+/* ── Tablet landscape ── */
+@media(max-width:1024px){
+  .hero-grid{ grid-template-columns:1fr; grid-template-rows:auto auto auto; gap:24px 0; text-align:center; }
+  .hero-top{ grid-column:1; grid-row:1; }
+  .hero-right{ grid-column:1; grid-row:2; display:flex; margin-top:0; }
+  .hero-bottom{ grid-column:1; grid-row:3; }
+  .hero-eyebrow{ justify-content:center; }
+  .hero-cta{ justify-content:center; }
+  .hero h1{ text-align:center; }
+  .hero-deva{ text-align:center; }
+  .hero-stats{ grid-template-columns:repeat(4,1fr); margin-top:40px; }
+  .head-split{ grid-template-columns:1fr; gap:24px; }
+  .about-grid{ grid-template-columns:1fr; }
+  .certs-row{ grid-template-columns:1fr 1fr; }
+  .counters-wrap{ grid-template-columns:repeat(4,1fr); }
+  .nav-links{ display:none; }
+  .nav-cta{ display:none; }
+  .hamburger{ display:flex; }
+  .nav .wrap{ grid-template-columns:1fr auto; }
+  .logo-img-wrap{ width:580px; height:580px; }
+}
+
+/* ── India map about-bg fix for mobile ── */
+@media(max-width:768px){
+  .about-bg-img{ background-size:85% auto !important; background-position:center 28% !important; filter:brightness(.78) saturate(1.1) !important; }
+}
+
+/* ── Tablet portrait ── */
+@media(max-width:768px){
+  .hero-layer{ inset:-8% 0; }
+  .util{ display:none; }
+  .sec{ padding:64px 0; }
+  .hero{ padding-top:76px; padding-bottom:32px; overflow:hidden; min-height:unset; justify-content:flex-start; }
+  .hero-grid{ gap:12px; }
+  .hero-stats{ grid-template-columns:1fr 1fr; gap:16px; margin-top:32px; }
+  .features-grid{ grid-template-columns:1fr 1fr; }
+  .apps-grid{ grid-template-columns:1fr 1fr; gap:12px; }
+  .contact-inner .wrap{ grid-template-columns:1fr; gap:40px; padding-top:64px; padding-bottom:64px; }
+  .footer-top{ grid-template-columns:1fr 1fr; gap:36px; }
+  .contact-form{ grid-template-columns:1fr; }
+  .cf-full{ grid-column:1; }
+  .why-choose-grid{ grid-template-columns:1fr !important; }
+  .certs-detail-grid{ grid-template-columns:1fr !important; border:none !important; }
+  .certs-detail-grid > div{ border-right:0 !important; border-bottom:1px solid var(--line); }
+  .certs-detail-grid > div:last-child{ border-bottom:0; }
+  .hero-right{ justify-content:center; margin-top:0; gap:0; }
+  .logo-img-wrap{ width:460px; height:460px; }
+  .logo-showcase{ margin-top:-20px; }
+  .hero-brand-text{ transform:none; margin-bottom:-20px; }
+  .hero-brand-text .name{ font-size:clamp(28px,7vw,48px); }
+  .hero-brand-logo1{ width:clamp(320px,72vw,500px); }
+  .section-h{ font-size:clamp(26px,5vw,44px); }
+  .hero h1{ font-size:clamp(30px,6vw,56px); }
+  .brand-card{ padding:32px 24px; }
+  .feat-img-wrap{ height:180px; }
+  .head-split{ margin-bottom:40px; }
+}
+
+/* ── Large mobile ── */
+@media(max-width:640px){
+  :root{ --px:20px; }
+  .sec{ padding:52px 0; }
+  .hero{ padding-top:72px; padding-bottom:28px; overflow:hidden; min-height:unset; justify-content:flex-start; }
+  .hero-grid{ gap:20px; }
+  .hero-stats{ grid-template-columns:1fr 1fr; gap:12px; }
+  .h-stat{ padding:16px 14px; }
+  .h-stat .sv{ font-size:22px; }
+  .apps-grid{ grid-template-columns:1fr 1fr; gap:10px; }
+  .footer-top{ grid-template-columns:1fr; gap:32px; }
+  .features-grid{ grid-template-columns:1fr 1fr; }
+  .contact-form{ grid-template-columns:1fr; }
+  .head-blurb{ font-size:15px; }
+  .btn{ padding:10px 20px; font-size:13px; }
+  .hero-cta{ flex-direction:column; align-items:center; gap:10px; }
+  .hero-cta .btn{ width:100%; max-width:300px; justify-content:center; }
+  .logo-img-wrap{ width:400px; height:400px; }
+  .logo-showcase{ margin-top:-20px; }
+  .hero-brand-text{ transform:none; margin-bottom:-20px; }
+  .hero-brand-text .name{ font-size:clamp(26px,8vw,42px); }
+  .hero-brand-logo1{ width:clamp(300px,76vw,440px); }
+  .section-h{ font-size:clamp(24px,6vw,38px); }
+  .hero h1{ font-size:clamp(28px,7vw,48px); }
+  .hero h1 .word{ padding-bottom:.25em; margin-bottom:-.25em; }
+  .about-copy p{ font-size:16px; }
+  .feat-img-wrap{ height:160px; }
+  .feat-body{ padding:20px 18px 28px; }
+  .feat h4{ font-size:clamp(18px,5vw,22px); }
+  .app-card{ aspect-ratio:3/4; }
+}
+
+/* ── Mobile ── */
+@media(max-width:480px){
+  .hero-layer{ inset:0; }
+  :root{ --px:16px; }
+  .sec{ padding:48px 0; }
+  .hero{ padding-top:68px; padding-bottom:24px; overflow:hidden; min-height:unset; justify-content:flex-start; }
+  .hero-grid{ gap:16px; }
+  .features-grid{ grid-template-columns:1fr 1fr; }
+  .feat-img-wrap{ height:140px; }
+  .feat-body{ padding:16px 14px 24px; }
+  .feat h4{ font-size:clamp(16px,4.5vw,20px); }
+  .apps-grid{ grid-template-columns:1fr 1fr; gap:8px; }
+  .hero-stats{ grid-template-columns:1fr 1fr; gap:10px; }
+  .h-stat{ padding:14px 12px; }
+  .h-stat .sv{ font-size:20px; }
+  .h-stat .sk{ font-size:9px; }
+  .footer-top{ grid-template-columns:1fr; gap:28px; }
+  .counters-wrap{ grid-template-columns:1fr 1fr; gap:1px; }
+  .footer-bottom{ flex-direction:column; gap:8px; text-align:center; font-size:9px; }
+  .footer-social-links{ justify-content:center; }
+  .nav .wrap{ height:60px; }
+  .section-h{ font-size:clamp(22px,7vw,36px); }
+  .head-blurb{ font-size:14px; }
+  .head-split{ margin-bottom:32px; gap:16px; }
+  .logo-img-wrap{ width:360px; height:360px; }
+  .logo-showcase{ margin-top:-20px; }
+  .hero-brand-text{ transform:none; margin-bottom:-20px; }
+  .hero-brand-text .name{ font-size:clamp(22px,8vw,34px); }
+  .hero-brand-logo1{ width:clamp(280px,78vw,380px); }
+  .hero h1{ font-size:clamp(24px,7.5vw,40px); line-height:1; }
+  .hero-eyebrow{ gap:6px; }
+  .brand-logo{ width:64px; height:50px; }
+  .brand-text .name{ font-size:15px; }
+  .brand-text .sub{ font-size:8px; }
+  .apps-grid{ gap:8px; }
+  .app-card{ aspect-ratio:1/1; }
+  .contact-form{ gap:16px 0; }
+  .cf-input, .cf-select, .cf-textarea{ font-size:15px; padding-bottom:10px; }
+  .cf-label{ font-size:11px; }
+  .cf-btn{ width:100%; justify-content:center; }
+  .cf-submit{ justify-content:center; }
+  .mobile-nav{ padding:80px 24px 40px; }
+  .mobile-nav a{ font-size:28px; padding:12px 0; }
+}
+
+/* ── Small mobile ── */
+@media(max-width:380px){
+  :root{ --px:14px; }
+  .hero{ padding-top:70px; }
+  .hero-stats{ gap:8px; }
+  .h-stat{ padding:12px 10px; }
+  .h-stat .sv{ font-size:18px; }
+  .logo-img-wrap{ width:310px; height:310px; }
+  .hero-brand-text .name{ font-size:clamp(20px,9vw,30px); }
+  .hero-brand-logo1{ width:clamp(260px,80vw,340px); }
+  .hero h1{ font-size:clamp(22px,8.5vw,34px); }
+  .counters-wrap{ grid-template-columns:1fr 1fr; }
+  .footer-social-links a{ width:36px; height:36px; }
+  .footer-social-links a svg{ width:15px; height:15px; }
+  .btn{ font-size:12px; padding:9px 16px; }
+  .section-h{ font-size:clamp(20px,8vw,32px); }
+  .features-grid{ grid-template-columns:1fr; }
+  .feat-img-wrap{ height:200px; }
+  .feat-body{ padding:20px 18px 28px; }
+  .apps-grid{ grid-template-columns:1fr; }
+  .mobile-nav a{ font-size:24px; }
+}
+
+/* ═══════════════════════════════════════════
+   GSAP INIT STATES (prevent FOUC)
+═══════════════════════════════════════════ */
+.will-anim{ opacity:0; }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Corporation",
+  "name": "Ashiana TMT",
+  "url": "https://www.ashianatmt.com",
+  "logo": "https://www.facebook.com/share/1GtschWVme/",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "9310088400",
+    "contactType": "customer service",
+    "areaServed": "IN",
+    "availableLanguage": ["en","Hindi"]
+  },
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=61589199576591",
+    "https://www.instagram.com/ashianatmt/",
+    "https://x.com/AshianaTMT",
+    "https://www.youtube.com/@ashianatmt",
+    "https://www.linkedin.com/in/ashiana-tmt-4153b2408/"
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- Scroll progress -->
+<div id="progress"></div>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WGNN8S3L"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- ═══════════ UTILITY BAR ═══════════ -->
+<div class="util">
+  <div class="wrap">
+    <div><span class="util-dot"></span>Ashiana® <span class="tmt">TMT</span> Fe550 SD</div>
+    <div class="r">
+      <a href="tel:+919310088400">+91 9310 088 400</a>
+      <a href="assets/Brochure.pdf" target="_blank" rel="noopener" download="Ashiana_TMT_Brochure.pdf">Download Brochure ↓</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ NAV ═══════════ -->
+<nav class="nav" id="nav">
+  <div class="wrap">
+    <a href="#home" class="brand magnetic">
+      <img
+        src="assets/logo1.png"
+        alt="Ashiana TMT Logo"
+        class="brand-logo"
+        id="navLogo"
+        onerror="this.style.display='none'; document.getElementById('navLogoSvg').style.display='block';"
+      />
+      <!-- Inline SVG fallback for nav -->
+      <svg id="navLogoSvg" class="brand-logo" style="display:none" viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="ns1" x1="20%" y1="0%" x2="80%" y2="100%"><stop offset="0%" stop-color="#F5D060"/><stop offset="40%" stop-color="#C8922A"/><stop offset="100%" stop-color="#7A4810"/></linearGradient>
+          <linearGradient id="ns2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FFFDF5"/><stop offset="100%" stop-color="#F0E8C0"/></linearGradient>
+        </defs>
+        <path d="M100 5 L192 34 L192 130 C192 181 150 215 100 231 C50 215 8 181 8 130 L8 34 Z" fill="url(#ns1)"/>
+        <path d="M100 19 L179 44 L179 130 C179 174 144 205 100 219 C56 205 21 174 21 130 L21 44 Z" fill="url(#ns2)"/>
+        <path d="M100 5 L192 34 L192 130 C192 181 150 215 100 231 C50 215 8 181 8 130 L8 34 Z" fill="none" stroke="#F5D060" stroke-width="2" opacity=".7"/>
+        <polygon points="100,38 128,53 136,80 129,106 100,117 71,106 64,80 72,53" fill="#C8922A"/>
+        <polygon points="100,38 128,53 114,46" fill="#F0C040"/><polygon points="100,38 72,53 86,46" fill="#E8B840"/>
+        <polygon points="100,38 114,46 100,56 86,46" fill="#F5D060" opacity=".9"/>
+        <polygon points="64,80 56,63 63,52 72,53 68,66" fill="#D49828"/>
+        <polygon points="136,80 144,63 137,52 128,53 132,66" fill="#D49828"/>
+        <path d="M86,110 Q82,128 80,143 Q78,156 85,161 Q92,165 95,156 Q97,148 93,142 Q90,135 92,126 Q94,118 95,114" fill="#C8922A"/>
+        <path d="M114,110 Q118,128 120,143 Q122,156 115,161 Q108,165 105,156 Q103,148 107,142 Q110,135 108,126 Q106,118 105,114" fill="#B07828"/>
+        <ellipse cx="100" cy="161" rx="8" ry="5" fill="#A07020" opacity=".8"/>
+        <circle cx="83" cy="72" r="5" fill="#F5D060"/><circle cx="83" cy="72" r="2.8" fill="#2A1A06"/><circle cx="84.2" cy="71" r="1.2" fill="white" opacity=".9"/>
+        <circle cx="117" cy="72" r="5" fill="#F5D060"/><circle cx="117" cy="72" r="2.8" fill="#2A1A06"/><circle cx="118.2" cy="71" r="1.2" fill="white" opacity=".9"/>
+        <path d="M86,110 Q78,120 76,128 Q74,133 78,135" stroke="#F8F4E8" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+        <path d="M114,110 Q122,120 124,128 Q126,133 122,135" stroke="#F8F4E8" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+        <circle cx="100" cy="54" r="3.2" fill="#F5D060"/><circle cx="100" cy="54" r="1.4" fill="#C8922A"/>
+      </svg>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#features">Key Features</a>
+      <a href="#applications">Applications</a>
+      <a href="#why-choose">Why Us</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-gold magnetic">Get in touch →</a>
+    </div>
+
+    <!-- Hamburger — visible on mobile/tablet -->
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile nav drawer -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <a href="#home"          class="mob-link">Home</a>
+  <a href="#about"         class="mob-link">About</a>
+  <a href="#features"      class="mob-link">Key Features</a>
+  <a href="#applications"  class="mob-link">Applications</a>
+  <a href="#why-choose"    class="mob-link">Why Us</a>
+  <a href="#certifications" class="mob-link">Certifications</a>
+  <a href="#contact"       class="mob-link">Contact</a>
+  <div class="mob-cta">
+    <a href="#contact" class="btn btn-gold">Get in touch →</a>
+  </div>
+</div>
+
+<!-- ═══════════ HERO ═══════════ -->
+<header class="hero" id="home">
+  <div class="hero-layer" id="heroLayer">
+    <div class="hero-layer-img"></div>
+    <div class="hero-layer-color"></div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-dots"></div>
+  <div class="hero-grain"></div>
+
+  <div class="wrap">
+    <div class="hero-grid">
+
+      <!-- ① Top-left: eyebrow + heading -->
+      <div class="hero-top">
+        <div class="hero-eyebrow" id="heroEyebrow">
+          <span class="pill"><span class="pdot"></span>A KSAL Brand &nbsp;•&nbsp; Est. 2002</span>
+          <span class="india-pill"><span class="flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 15" width="22" height="15" style="display:block">
+  <rect x="0" y="0" width="22" height="5" fill="#FF9933"/>
+  <rect x="0" y="5" width="22" height="5" fill="#FFFFFF"/>
+  <rect x="0" y="10" width="22" height="5" fill="#138808"/>
+  <circle cx="11" cy="7.5" r="2.5" fill="none" stroke="#000080" stroke-width="0.5"/>
+  <circle cx="11" cy="7.5" r="0.55" fill="#000080"/>
+  <g stroke="#000080" stroke-width="0.35">
+    <line x1="11" y1="5.1" x2="11" y2="9.9"/>
+    <line x1="11" y1="5.1" x2="11" y2="9.9" transform="rotate(15 11 7.5)"/>
+    <line x1="11" y1="5.1" x2="11" y2="9.9" transform="rotate(30 11 7.5)"/>
+    <line x1="11" y1="5.1" x2="11" y2="9.9" transform="rotate(45 11 7.5)"/>
+    <line x1="11" y1="5.1" x2="11" y2="9.9" transform="rotate(60 11 7.5)"/>
+    <line x1="11" y1="5.1" x2="11" y2="9.9" transform="rotate(75 11 7.5)"/>
+    <line x1="11" y1="5.1" x2="11" y2="9.9" transform="rotate(90 11 7.5)"/>
+    <line x1="11" y1="5.1" x2="11" y2="9.9" transform="rotate(105 11 7.5)"/>
+    <line x1="11" y1="5.1" x2="11" y2="9.9" transform="rotate(120 11 7.5)"/>
+    <line x1="11" y1="5.1" x2="11" y2="9.9" transform="rotate(135 11 7.5)"/>
+    <line x1="11" y1="5.1" x2="11" y2="9.9" transform="rotate(150 11 7.5)"/>
+    <line x1="11" y1="5.1" x2="11" y2="9.9" transform="rotate(165 11 7.5)"/>
+  </g>
+</svg></span>Made in India</span>
+        </div>
+        <h1 id="heroH1">
+          <span class="word"><span class="word-inner">Building</span></span>
+          <span class="word"> <span class="word-inner it">strength.</span></span><br/>
+          <span class="word"><span class="word-inner">Delivering</span></span>
+          <span class="word"> <span class="word-inner it">trust.</span></span>
+        </h1>
+      </div><!-- /hero-top -->
+
+      <!-- ② Right column (desktop col 2 spanning both rows; mobile row 2 — directly under heading) -->
+      <div class="hero-right" id="heroRight">
+        <div class="hero-brand-text">
+          <img src="assets/logo1.png" alt="Ashiana TMT" class="hero-brand-logo1" />
+        </div>
+        <div class="logo-showcase">
+          <div class="logo-img-wrap magnetic">
+            <img
+              src="assets/logo.png"
+              alt="Ashiana TMT Shield"
+              class="logo-main"
+              id="heroLogoImg"
+              onerror="this.classList.add('errored'); document.getElementById('heroLogoSvg').style.display='block';"
+            />
+            <!-- Inline SVG hero fallback -->
+            <svg id="heroLogoSvg" class="logo-fallback" style="display:none" viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="hs1" x1="20%" y1="0%" x2="80%" y2="100%"><stop offset="0%" stop-color="#F5D060"/><stop offset="40%" stop-color="#D4A030"/><stop offset="100%" stop-color="#7A4810"/></linearGradient>
+                <linearGradient id="hs2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FFFDF8"/><stop offset="100%" stop-color="#EEE4C0"/></linearGradient>
+                <radialGradient id="hglow" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#F0C040" stop-opacity=".9"/><stop offset="60%" stop-color="#C8922A" stop-opacity=".8"/><stop offset="100%" stop-color="#8B5E1A" stop-opacity="1"/></radialGradient>
+              </defs>
+              <path d="M100 4 L194 34 L194 132 C194 184 152 218 100 234 C48 218 6 184 6 132 L6 34 Z" fill="url(#hs1)"/>
+              <path d="M100 18 L181 45 L181 132 C181 177 145 208 100 222 C55 208 19 177 19 132 L19 45 Z" fill="url(#hs2)"/>
+              <path d="M100 4 L194 34 L194 132 C194 184 152 218 100 234 C48 218 6 184 6 132 L6 34 Z" fill="none" stroke="#F0C840" stroke-width="2.5" opacity=".8"/>
+              <path d="M100 18 L181 45 L181 132 C181 177 145 208 100 222 C55 208 19 177 19 132 L19 45 Z" fill="none" stroke="#D4A030" stroke-width="1" opacity=".4"/>
+              <polygon points="100,37 130,53 139,83 131,110 100,121 69,110 61,83 70,53" fill="url(#hglow)"/>
+              <polygon points="100,37 130,53 115,45" fill="#F5D060"/>
+              <polygon points="130,53 139,83 134,68" fill="#A07020"/>
+              <polygon points="139,83 131,110 135,96" fill="#8B5E1A"/>
+              <polygon points="131,110 100,121 116,116" fill="#C8922A"/>
+              <polygon points="100,121 69,110 84,116" fill="#B07828"/>
+              <polygon points="69,110 61,83 65,97" fill="#A07020"/>
+              <polygon points="61,83 70,53 65,68" fill="#B88030"/>
+              <polygon points="70,53 100,37 85,45" fill="#F0C040"/>
+              <polygon points="100,37 115,45 100,56 85,45" fill="#F8D870" opacity=".95"/>
+              <polygon points="61,83 52,63 60,51 70,53 65,68" fill="#D4A028"/>
+              <polygon points="52,63 60,51 56,68" fill="#F0C040" opacity=".9"/>
+              <polygon points="61,83 52,63 57,73" fill="#A87018"/>
+              <polygon points="139,83 148,63 140,51 130,53 135,68" fill="#D4A028"/>
+              <polygon points="148,63 140,51 144,68" fill="#F0C040" opacity=".9"/>
+              <polygon points="139,83 148,63 143,73" fill="#A87018"/>
+              <path d="M84,113 Q79,133 77,149 Q75,163 82,168 Q89,172 93,163 Q95,155 91,149 Q87,143 89,134 Q91,124 93,117" fill="#C8922A"/>
+              <path d="M116,113 Q121,133 123,149 Q125,163 118,168 Q111,172 107,163 Q105,155 109,149 Q113,143 111,134 Q109,124 107,117" fill="#B07828"/>
+              <ellipse cx="100" cy="168" rx="10" ry="6" fill="#9A6018" opacity=".85"/>
+              <circle cx="82" cy="74" r="5.5" fill="#F5D060"/>
+              <circle cx="82" cy="74" r="3" fill="#1E1208"/>
+              <circle cx="83.3" cy="72.7" r="1.3" fill="white" opacity=".95"/>
+              <circle cx="118" cy="74" r="5.5" fill="#F5D060"/>
+              <circle cx="118" cy="74" r="3" fill="#1E1208"/>
+              <circle cx="119.3" cy="72.7" r="1.3" fill="white" opacity=".95"/>
+              <path d="M84,113 Q76,124 74,132 Q72,139 77,141" stroke="#F8F4E0" stroke-width="4" fill="none" stroke-linecap="round"/>
+              <path d="M116,113 Q124,124 126,132 Q128,139 123,141" stroke="#F8F4E0" stroke-width="4" fill="none" stroke-linecap="round"/>
+              <circle cx="100" cy="53" r="4" fill="#F5D060"/>
+              <circle cx="100" cy="53" r="1.8" fill="#8B5E1A"/>
+            </svg>
+          </div>
+        </div>
+      </div><!-- /hero-right -->
+
+      <!-- ③ Bottom-left: tagline, para, CTAs -->
+      <div class="hero-bottom">
+        <div class="hero-deva" id="heroDeva">Sapno ka ghar, Ashiana ka loha.</div>
+        <p id="heroSub" style="font-size:clamp(15px,1.5vw,18px);color:var(--ink-2);line-height:1.75;max-width:52ch;margin:0 0 36px;opacity:0;">When you're building the home you've dreamed of for years, the steel you choose matters more than most people realise. Ashiana® TMT Fe550 SD bars — brought to you by KSAL — are engineered from the ground up to give your structure the strength it needs today, and the resilience it deserves for generations.</p>
+        <div class="hero-cta" id="heroCta">
+          <a href="#about" class="btn btn-gold magnetic">Explore Our Products →</a>
+          <a href="#contact" class="btn btn-outline magnetic">Contact Us</a>
+        </div>
+      </div><!-- /hero-bottom -->
+
+    </div><!-- /hero-grid -->
+
+    <!-- Stats -->
+    <div class="hero-stats" id="heroStats">
+      <div class="h-stat">
+        <div class="sk">01</div>
+        <div class="sv" data-count="23">23+</div>
+        <div class="sd">Years of Trust &amp; Excellence<br/><small style="font-size:11px;color:var(--ink-4)">Est. 2002 — two decades of consistent quality</small></div>
+      </div>
+      <div class="h-stat">
+        <div class="sk">02</div>
+        <div class="sv">Advanced</div>
+        <div class="sd">Manufacturing Technology<br/><small style="font-size:11px;color:var(--ink-4)">Precision-rolled in modern, fully-integrated plants</small></div>
+      </div>
+      <div class="h-stat">
+        <div class="sk">03</div>
+        <div class="sv">8–32 mm</div>
+        <div class="sd">Wide Size Range<br/><small style="font-size:11px;color:var(--ink-4)">For every application — columns, beams, slabs &amp; more</small></div>
+      </div>
+      <div class="h-stat">
+        <div class="sk">04</div>
+        <div class="sv">Nationwide</div>
+        <div class="sd">Trusted Across India<br/><small style="font-size:11px;color:var(--ink-4)">Pan-India dealer network — 500+ strong</small></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════ MARQUEE ═══════════ -->
+<div class="marquee-strip">
+  <div class="marquee-track" id="marqueeTrack">
+    <!-- duplicated for seamless loop -->
+    <span class="marquee-item">Superior Strength <span class="msep">✦</span></span>
+    <span class="marquee-item">Fe550 SD Certified <span class="msep">✦</span></span>
+    <span class="marquee-item">BIS Standard IS:1786 <span class="msep">✦</span></span>
+    <span class="marquee-item">Corrosion Resistant <span class="msep">✦</span></span>
+    <span class="marquee-item">Earthquake Resistant <span class="msep">✦</span></span>
+    <span class="marquee-item">Made in India <span class="msep">✦</span></span>
+    <span class="marquee-item">Ashiana® TMT <span class="msep">✦</span></span>
+    <span class="marquee-item">Est. 2002 <span class="msep">✦</span></span>
+    <span class="marquee-item">Superior Strength <span class="msep">✦</span></span>
+    <span class="marquee-item">Fe550 SD Certified <span class="msep">✦</span></span>
+    <span class="marquee-item">BIS Standard IS:1786 <span class="msep">✦</span></span>
+    <span class="marquee-item">Corrosion Resistant <span class="msep">✦</span></span>
+    <span class="marquee-item">Earthquake Resistant <span class="msep">✦</span></span>
+    <span class="marquee-item">Made in India <span class="msep">✦</span></span>
+    <span class="marquee-item">Ashiana® TMT <span class="msep">✦</span></span>
+    <span class="marquee-item">Est. 2002 <span class="msep">✦</span></span>
+  </div>
+</div>
+
+<!-- ═══════════ COUNTERS ═══════════ -->
+<div class="sec-bg1">
+  <div class="wrap" style="padding-top:80px;padding-bottom:48px;">
+    <div class="will-anim" style="text-align:center;margin-bottom:56px;">
+      <h2 class="section-h" style="margin-bottom:16px;">Numbers That Tell <span class="it">the Real Story</span></h2>
+      <p style="font-size:17px;color:var(--ink-2);max-width:54ch;margin:0 auto;line-height:1.7;">We could tell you Ashiana® TMT is India's trusted choice for structural steel. But we think these numbers say it better.</p>
+    </div>
+  </div>
+  <div class="counters-wrap will-anim" id="counters">
+    <div class="counter-item">
+      <div class="counter-n"><span class="cnum" data-target="23">0</span>+</div>
+      <div class="counter-label">Years in Business</div>
+      <div class="counter-sub">Est. 2002 — two decades of unbroken quality delivery</div>
+    </div>
+    <div class="counter-item">
+      <div class="counter-n"><span class="cnum" data-target="500">0</span>+</div>
+      <div class="counter-label">Dealer Network</div>
+      <div class="counter-sub">Pan-India presence — a trusted dealer near you</div>
+    </div>
+    <div class="counter-item">
+      <div class="counter-n"><span class="cnum" data-target="50">0</span>K+</div>
+      <div class="counter-label">Projects Completed</div>
+      <div class="counter-sub">Residential &amp; commercial structures across the country</div>
+    </div>
+    <div class="counter-item">
+      <div class="counter-n"><span class="cnum" data-target="100">0</span>%</div>
+      <div class="counter-label">BIS Compliant</div>
+      <div class="counter-sub">Certified to IS:1786 Fe550 SD — no exceptions, no shortcuts</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ ABOUT ═══════════ -->
+<section class="sec" id="about" style="position:relative; overflow:hidden;">
+  <div class="about-bg-img" style="position:absolute;inset:0;background:url('assets/about bg.webp') center/cover no-repeat;filter:brightness(.55) saturate(.8);z-index:0;"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,8,6,.55) 0%,rgba(9,8,6,.45) 100%);z-index:1;"></div>
+  <div class="wrap" style="position:relative;z-index:2;">
+    <div class="head-split will-anim">
+      <div>
+        <div class="section-label"><span class="n">01 /</span> About Us</div>
+        <h2 class="section-h">About Ashiana<sup class="tm-reg">®</sup> <span class="tmt">TMT</span> — <span class="it">The Steel That Stands By You</span></h2>
+      </div>
+      <div class="head-blurb">
+        Backed by the legacy of KSAL, Ashiana<sup class="tm-reg">®</sup> <span class="tmt">TMT</span> represents more than just reinforcement steel — it represents the trust of thousands of families, contractors, and builders who refuse to compromise when it comes to the structures they call home.
+      </div>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-copy will-anim" style="--delay:.05s">
+        <p>Ashiana<sup class="tm-reg">®</sup> <span class="tmt">TMT</span> Fe550 SD is engineered to deliver superior strength, outstanding ductility, and long-lasting durability across modern construction requirements. Every bar that leaves our facility carries the promise of a brand that has spent over two decades refining its craft. We don't just manufacture steel — we manufacture confidence.</p>
+        <p>Designed equally for intimate residential builds and sprawling commercial developments, Ashiana<sup class="tm-reg">®</sup> <span class="tmt">TMT</span> bars bring together advanced metallurgy with precision rolling technology. The result is a rebar that bends without breaking, welds without weakening, and holds firm even when the earth beneath it shakes. That's not just a specification. That's a commitment.</p>
+        <p>From high-rise apartment towers to critical public infrastructure — bridges, flyovers, metro rail foundations — every Ashiana<sup class="tm-reg">®</sup> <span class="tmt">TMT</span> bar is produced under strict quality controls and fully certified to BIS standard IS:1786 Fe550 SD. This means your structure isn't just strong on paper. It's strong in reality, year after year, season after season.</p>
+      </div>
+
+      <div class="will-anim" style="--delay:.12s">
+        <div class="brand-card">
+          <img
+            src="assets/logo.png"
+            alt="Ashiana TMT Logo"
+            class="bc-logo"
+            onerror="this.classList.add('errored')"
+          />
+          <div class="bc-deva">Sapno ka ghar, Ashiana ka loha.</div>
+          <div class="bc-sep"></div>
+          <div class="bc-foot">A KSAL brand · Est. 2002</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FEATURES / PRODUCTS ═══════════ -->
+<section class="sec sec-bg1" id="features">
+  <div class="wrap">
+    <div class="head-split will-anim">
+      <div>
+        <div class="section-label"><span class="n">02 /</span> Key Features</div>
+        <h2 class="section-h">Engineered for <span class="it">Performance.</span> Built for the <span class="it">Long Haul.</span></h2>
+      </div>
+      <div class="head-blurb">Six defining properties — precision-manufactured into every single bar we produce. These aren't marketing promises. They're measurable realities, tested and verified at every stage of production.</div>
+    </div>
+
+    <div class="features-grid will-anim" id="featGrid">
+      <div class="feat">
+        <div class="feat-img-wrap">
+          <!-- Steel/rebar reinforcement bars stacked -->
+          <img class="feat-img" loading="lazy" alt="High strength Fe550 SD TMT bars for RCC construction India" src="images-features/Superior_Strength..webp"/>
+        </div>
+        <div class="feat-body">
+          <div class="feat-n">01</div>
+          <h4>Superior<br/>Strength</h4>
+          <p style="font-size:14px;color:var(--ink-3);line-height:1.6;margin-top:16px;">Ashiana<sup class="tm-reg">®</sup> TMT Fe550 SD bars deliver a minimum yield strength of 550 MPa — comfortably exceeding the BIS IS:1786 standard. Less waste, more strength. That's smart construction.</p>
+        </div>
+      </div>
+      <div class="feat">
+        <div class="feat-img-wrap">
+          <!-- Steel mill precision rolling manufacturing -->
+          <img class="feat-img" loading="lazy" alt="Consistent Quality — Steel manufacturing precision rolling" src="images-features/Consistent_Quality..webp"/>
+        </div>
+        <div class="feat-body">
+          <div class="feat-n">02</div>
+          <h4>Consistent<br/>Quality</h4>
+          <p style="font-size:14px;color:var(--ink-3);line-height:1.6;margin-top:16px;">Every Ashiana<sup class="tm-reg">®</sup> TMT coil is rolled to precise dimensional tolerances, tested in-house, and cross-checked against BIS norms. Batch after batch, you get the same reliable product. No surprises. No shortcuts.</p>
+        </div>
+      </div>
+      <div class="feat">
+        <div class="feat-img-wrap">
+          <!-- Industrial steel pipes rust/corrosion resistance -->
+          <img class="feat-img" loading="lazy" alt="Corrosion-resistant TMT bars for coastal and monsoon-prone areas" src="images-features/Corrosion_Resistant..webp"/>
+        </div>
+        <div class="feat-body">
+          <div class="feat-n">03</div>
+          <h4>Corrosion<br/>Resistant</h4>
+          <p style="font-size:14px;color:var(--ink-3);line-height:1.6;margin-top:16px;">Ashiana<sup class="tm-reg">®</sup> TMT bars are produced with a controlled carbon-sulphur-phosphorus chemistry that significantly reduces corrosion risk. Structures last longer, maintenance costs drop, and your investment holds its value over decades.</p>
+        </div>
+      </div>
+      <div class="feat">
+        <div class="feat-img-wrap">
+          <!-- Welding sparks metal fabrication -->
+          <img class="feat-img" loading="lazy" alt="Excellent Weldability — Steel welding fabrication" src="images-features/Excellent_Weldability..webp"/>
+        </div>
+        <div class="feat-body">
+          <div class="feat-n">04</div>
+          <h4>Excellent<br/>Weldability</h4>
+          <p style="font-size:14px;color:var(--ink-3);line-height:1.6;margin-top:16px;">Ashiana<sup class="tm-reg">®</sup> TMT bars have a controlled Carbon Equivalent (CE) value that makes them highly weldable — reducing the risk of heat-affected zone cracking during site fabrication. On a busy construction site, that kind of dependability is priceless.</p>
+        </div>
+      </div>
+      <div class="feat">
+        <div class="feat-img-wrap">
+          <img class="feat-img" loading="lazy" alt="Earthquake-resistant TMT bars for seismic zone III IV V India" src="images-features/Superior_Ductility.webp"/>
+        </div>
+        <div class="feat-body">
+          <div class="feat-n">05</div>
+          <h4>Superior<br/>Ductility <small style="font-size:65%;color:var(--gold-2)">(SD Grade)</small></h4>
+          <p style="font-size:14px;color:var(--ink-3);line-height:1.6;margin-top:16px;">The 'SD' in Fe550 SD stands for <em>Special Ductility</em>. Our bars have a high Uniform Elongation (UE) and a favourable Ultimate-to-Yield ratio — the preferred choice in seismic zones and earthquake-prone regions.</p>
+        </div>
+      </div>
+      <div class="feat">
+        <div class="feat-img-wrap">
+          <img class="feat-img" loading="lazy" alt="Earthquake Resistant — Building structure" src="images-features/Earthquake_Resistant..webp"/>
+        </div>
+        <div class="feat-body">
+          <div class="feat-n">06</div>
+          <h4>Earthquake<br/>Resistant</h4>
+          <p style="font-size:14px;color:var(--ink-3);line-height:1.6;margin-top:16px;">Ashiana<sup class="tm-reg">®</sup> TMT Fe550 SD bars are designed to perform under dynamic loads, meeting and exceeding IS:13920 requirements for ductile detailing. When you build with Ashiana<sup class="tm-reg">®</sup> TMT, you're building a structure that fights back.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Map image section -->
+    <div class="will-anim map-section">
+      <img src="assets/map.webp" alt="" class="map-img" loading="lazy" />
+    </div>
+
+    <!-- Product Sizes Table -->
+    <div class="will-anim" id="product-sizes" style="margin-top:80px;">
+      <h3 style="font-size:clamp(22px,2.2vw,30px);font-weight:700;letter-spacing:-.025em;margin:0 0 12px;color:var(--ink);">Product Sizes — Ashiana<sup class="tm-reg">®</sup> <span class="tmt">TMT</span> Fe550 SD</h3>
+      <p style="font-size:15px;color:var(--ink-3);margin:0 0 32px;max-width:64ch;">Available in a comprehensive range of diameters to support every structural application — from slabs and beams to columns and foundation rafts.</p>
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;font-size:14px;">
+          <thead>
+            <tr style="border-bottom:2px solid var(--gold-3);">
+              <th style="text-align:left;padding:14px 20px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-2);font-weight:600;">Size (mm)</th>
+              <th style="text-align:left;padding:14px 20px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-2);font-weight:600;">Common Application</th>
+              <th style="text-align:left;padding:14px 20px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-2);font-weight:600;">Min. Yield Strength</th>
+              <th style="text-align:left;padding:14px 20px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-2);font-weight:600;">Grade</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--line);transition:background .2s;" onmouseover="this.style.background='rgba(200,146,42,.04)'" onmouseout="this.style.background=''">
+              <td style="padding:16px 20px;font-weight:700;color:var(--ink);">8mm</td>
+              <td style="padding:16px 20px;color:var(--ink-2);">Slabs, links, stirrups</td>
+              <td style="padding:16px 20px;color:var(--gold-2);font-weight:600;">550 MPa (Min)</td>
+              <td style="padding:16px 20px;color:var(--ink-3);">Fe550 SD</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--line);transition:background .2s;" onmouseover="this.style.background='rgba(200,146,42,.04)'" onmouseout="this.style.background=''">
+              <td style="padding:16px 20px;font-weight:700;color:var(--ink);">10mm</td>
+              <td style="padding:16px 20px;color:var(--ink-2);">Slabs, beams (light)</td>
+              <td style="padding:16px 20px;color:var(--gold-2);font-weight:600;">550 MPa (Min)</td>
+              <td style="padding:16px 20px;color:var(--ink-3);">Fe550 SD</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--line);transition:background .2s;" onmouseover="this.style.background='rgba(200,146,42,.04)'" onmouseout="this.style.background=''">
+              <td style="padding:16px 20px;font-weight:700;color:var(--ink);">12mm</td>
+              <td style="padding:16px 20px;color:var(--ink-2);">Beams, columns (residential)</td>
+              <td style="padding:16px 20px;color:var(--gold-2);font-weight:600;">550 MPa (Min)</td>
+              <td style="padding:16px 20px;color:var(--ink-3);">Fe550 SD</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--line);transition:background .2s;" onmouseover="this.style.background='rgba(200,146,42,.04)'" onmouseout="this.style.background=''">
+              <td style="padding:16px 20px;font-weight:700;color:var(--ink);">16mm</td>
+              <td style="padding:16px 20px;color:var(--ink-2);">Columns, beams (commercial)</td>
+              <td style="padding:16px 20px;color:var(--gold-2);font-weight:600;">550 MPa (Min)</td>
+              <td style="padding:16px 20px;color:var(--ink-3);">Fe550 SD</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--line);transition:background .2s;" onmouseover="this.style.background='rgba(200,146,42,.04)'" onmouseout="this.style.background=''">
+              <td style="padding:16px 20px;font-weight:700;color:var(--ink);">20mm</td>
+              <td style="padding:16px 20px;color:var(--ink-2);">Foundations, heavy beams</td>
+              <td style="padding:16px 20px;color:var(--gold-2);font-weight:600;">550 MPa (Min)</td>
+              <td style="padding:16px 20px;color:var(--ink-3);">Fe550 SD</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--line);transition:background .2s;" onmouseover="this.style.background='rgba(200,146,42,.04)'" onmouseout="this.style.background=''">
+              <td style="padding:16px 20px;font-weight:700;color:var(--ink);">25mm</td>
+              <td style="padding:16px 20px;color:var(--ink-2);">Raft foundations, heavy columns</td>
+              <td style="padding:16px 20px;color:var(--gold-2);font-weight:600;">550 MPa (Min)</td>
+              <td style="padding:16px 20px;color:var(--ink-3);">Fe550 SD</td>
+            </tr>
+            <tr style="transition:background .2s;" onmouseover="this.style.background='rgba(200,146,42,.04)'" onmouseout="this.style.background=''">
+              <td style="padding:16px 20px;font-weight:700;color:var(--ink);">32mm</td>
+              <td style="padding:16px 20px;color:var(--ink-2);">Industrial, infrastructure</td>
+              <td style="padding:16px 20px;color:var(--gold-2);font-weight:600;">550 MPa (Min)</td>
+              <td style="padding:16px 20px;color:var(--ink-3);">Fe550 SD</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="sec" id="applications">
+  <div class="wrap">
+    <div class="head-split will-anim">
+      <div>
+        <div class="section-label"><span class="n">03 /</span> Applications</div>
+        <h2 class="section-h">Where Ashiana<sup class="tm-reg">®</sup> <span class="tmt">TMT</span> <span class="it">Goes to Work.</span></h2>
+      </div>
+      <div class="head-blurb">From the home you're building for your family to large-scale national infrastructure — Ashiana<sup class="tm-reg">®</sup> <span class="tmt">TMT</span> Fe550 SD supports every construction milestone that matters.</div>
+    </div>
+
+    <div class="apps-grid will-anim" id="appsGrid">
+      <article class="app-card">
+        <img class="app-card-img" loading="lazy" alt="Indian residential construction" src="https://images.unsplash.com/photo-1613977257592-4871e5fcd7c4?auto=format&fit=crop&w=900&q=75"/>
+        <div class="app-card-overlay"></div>
+        <div class="app-num">01 / 04</div>
+        <div class="app-body">
+          <h4>Residential<br/>Construction</h4>
+          <p style="font-size:12px;color:rgba(255,255,255,.7);line-height:1.6;margin:8px 0 12px;display:none;" class="app-desc">Used in G+3 to G+10 buildings, bungalows, row houses and group housing societies. Gives homeowners peace of mind to live without worry.</p>
+
+        </div>
+      </article>
+      <article class="app-card">
+        <img class="app-card-img" loading="lazy" alt="Indian commercial building" src="https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=900&q=75"/>
+        <div class="app-card-overlay"></div>
+        <div class="app-num">02 / 04</div>
+        <div class="app-body">
+          <h4>Commercial<br/>Buildings</h4>
+          <p style="font-size:12px;color:rgba(255,255,255,.7);line-height:1.6;margin:8px 0 12px;display:none;" class="app-desc">Office towers, malls, hotels and multiplexes. Superior strength-to-weight ratio lets engineers optimise designs while exceeding safety margins.</p>
+
+        </div>
+      </article>
+      <article class="app-card">
+        <img class="app-card-img" loading="lazy" alt="Indian infrastructure bridge highway" src="https://images.unsplash.com/photo-1545987796-200677ee1011?auto=format&fit=crop&w=900&q=75"/>
+        <div class="app-card-overlay"></div>
+        <div class="app-num">03 / 04</div>
+        <div class="app-body">
+          <h4>Infrastructure<br/>Projects</h4>
+          <p style="font-size:12px;color:rgba(255,255,255,.7);line-height:1.6;margin:8px 0 12px;display:none;" class="app-desc">Bridges, flyovers, metro rail foundations, dams, highways. Fe550 SD grade meets the rigorous demands of critical public infrastructure.</p>
+
+        </div>
+      </article>
+      <article class="app-card">
+        <img class="app-card-img" loading="lazy" alt="Indian industrial steel plant" src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=900&q=75"/>
+        <div class="app-card-overlay"></div>
+        <div class="app-num">04 / 04</div>
+        <div class="app-body">
+          <h4>Industrial<br/>Projects</h4>
+          <p style="font-size:12px;color:rgba(255,255,255,.7);line-height:1.6;margin:8px 0 12px;display:none;" class="app-desc">Factories, warehouses, power plants. Excellent weldability and corrosion resistance — where downtime for structural maintenance is simply not an option.</p>
+
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ WHY CHOOSE ═══════════ -->
+<section class="sec sec-bg2" id="why-choose">
+  <div class="wrap">
+    <div class="head-split will-anim">
+      <div>
+        <div class="section-label"><span class="n">05 /</span> Why Choose Us</div>
+        <h2 class="section-h">Not All Steel Is<br/><span class="it">Created Equal.</span></h2>
+      </div>
+      <div class="head-blurb">Here's why thousands of builders, contractors, and homeowners keep coming back to Ashiana® TMT — year after year.</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;" class="will-anim why-choose-grid">
+      <div>
+        <p style="font-size:17px;line-height:1.8;color:var(--ink-2);margin:0 0 24px;">Walk into any hardware store or building materials market in India and you'll find no shortage of TMT bars. Different brands, different grades, different price points. So why do thousands of builders, contractors, and homeowners — year after year — keep coming back to Ashiana® TMT?</p>
+        <p style="font-size:17px;line-height:1.8;color:var(--ink-2);margin:0;">The answer is simpler than you might think. It's because we've never once treated quality as a variable. From the very first bar we rolled in 2002 to the one that left our plant today, every Ashiana® TMT bar is held to the same exacting standard. That consistency — that refusal to cut corners — is the foundation of the trust our customers place in us.</p>
+      </div>
+      <div>
+        <p style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-2);margin:0 0 24px;font-weight:600;">What sets Ashiana® TMT apart</p>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0;">
+          <li style="display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--line);">
+            <span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--gold-dim);border:1px solid rgba(200,146,42,.4);display:flex;align-items:center;justify-content:center;margin-top:2px;font-size:10px;color:var(--gold-2);">✓</span>
+            <span style="font-size:15px;color:var(--ink-2);line-height:1.6;">Manufactured by KSAL — a name built on decades of integrity in the Indian steel industry.</span>
+          </li>
+          <li style="display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--line);">
+            <span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--gold-dim);border:1px solid rgba(200,146,42,.4);display:flex;align-items:center;justify-content:center;margin-top:2px;font-size:10px;color:var(--gold-2);">✓</span>
+            <span style="font-size:15px;color:var(--ink-2);line-height:1.6;">Full BIS certification to IS:1786 Fe550 SD — India's most stringent standard for structural rebars.</span>
+          </li>
+          <li style="display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--line);">
+            <span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--gold-dim);border:1px solid rgba(200,146,42,.4);display:flex;align-items:center;justify-content:center;margin-top:2px;font-size:10px;color:var(--gold-2);">✓</span>
+            <span style="font-size:15px;color:var(--ink-2);line-height:1.6;">Fe550 SD Special Ductility grade — meeting IS:13920 for earthquake-resistant construction.</span>
+          </li>
+          <li style="display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--line);">
+            <span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--gold-dim);border:1px solid rgba(200,146,42,.4);display:flex;align-items:center;justify-content:center;margin-top:2px;font-size:10px;color:var(--gold-2);">✓</span>
+            <span style="font-size:15px;color:var(--ink-2);line-height:1.6;">In-house quality labs with real-time testing — every batch verified before it leaves the plant.</span>
+          </li>
+          <li style="display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--line);">
+            <span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--gold-dim);border:1px solid rgba(200,146,42,.4);display:flex;align-items:center;justify-content:center;margin-top:2px;font-size:10px;color:var(--gold-2);">✓</span>
+            <span style="font-size:15px;color:var(--ink-2);line-height:1.6;">Wide size availability from 8mm to 32mm — supporting every structural application under one brand.</span>
+          </li>
+          <li style="display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--line);">
+            <span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--gold-dim);border:1px solid rgba(200,146,42,.4);display:flex;align-items:center;justify-content:center;margin-top:2px;font-size:10px;color:var(--gold-2);">✓</span>
+            <span style="font-size:15px;color:var(--ink-2);line-height:1.6;">Pan-India dealer network of 500+ distributors — ensuring availability wherever you build.</span>
+          </li>
+          <li style="display:flex;gap:16px;align-items:flex-start;padding:18px 0;">
+            <span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--gold-dim);border:1px solid rgba(200,146,42,.4);display:flex;align-items:center;justify-content:center;margin-top:2px;font-size:10px;color:var(--gold-2);">✓</span>
+            <span style="font-size:15px;color:var(--ink-2);line-height:1.6;">Trusted by builders across seismic zones II, III, IV, and V.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CERTIFICATIONS & STANDARDS ═══════════ -->
+<section class="sec sec-bg1" id="certifications">
+  <div class="wrap">
+    <div class="head-split will-anim">
+      <div>
+        <div class="section-label"><span class="n">06 /</span> Certifications</div>
+        <h2 class="section-h">Built to the Highest<br/><span class="it">Standards.</span> Certified to<br/><span class="it">Prove It.</span></h2>
+      </div>
+      <div class="head-blurb">Certifications aren't just badges on a brochure. They're the result of rigorous third-party verification — external auditors walking through our plant, confirming that what we claim matches what we deliver.</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;" class="will-anim certs-detail-grid">
+      <div style="padding:48px 40px;border-right:1px solid var(--line);position:relative;overflow:hidden;transition:background .3s;" onmouseover="this.style.background='rgba(200,146,42,.04)'" onmouseout="this.style.background=''">
+        <div style="width:44px;height:44px;border-radius:10px;background:var(--gold-dim);border:1px solid rgba(200,146,42,.35);display:flex;align-items:center;justify-content:center;margin-bottom:24px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold-2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L3 7l9 5 9-5-9-5z"/><path d="M3 17l9 5 9-5"/><path d="M3 12l9 5 9-5"/></svg>
+        </div>
+        <h4 style="font-size:18px;font-weight:700;color:var(--ink);margin:0 0 8px;letter-spacing:-.02em;">BIS Certification<br/>IS:1786 Fe550 SD</h4>
+        <div style="width:32px;height:2px;background:linear-gradient(90deg,var(--gold-2),var(--gold-1));border-radius:999px;margin-bottom:16px;"></div>
+        <p style="font-size:14px;color:var(--ink-3);line-height:1.7;margin:0;">The Bureau of Indian Standards IS:1786 is the definitive standard for high-strength deformed steel bars in India. Fe550 SD is the highest-ductility grade. Our BIS mark is not self-declared — it is granted and periodically renewed based on independent audits of our manufacturing process and finished product.</p>
+      </div>
+      <div style="padding:48px 40px;border-right:1px solid var(--line);position:relative;overflow:hidden;transition:background .3s;" onmouseover="this.style.background='rgba(200,146,42,.04)'" onmouseout="this.style.background=''">
+        <div style="width:44px;height:44px;border-radius:10px;background:var(--gold-dim);border:1px solid rgba(200,146,42,.35);display:flex;align-items:center;justify-content:center;margin-bottom:24px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold-2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <h4 style="font-size:18px;font-weight:700;color:var(--ink);margin:0 0 8px;letter-spacing:-.02em;">IS:13920 — Ductile<br/>Detailing Standard</h4>
+        <div style="width:32px;height:2px;background:linear-gradient(90deg,var(--gold-2),var(--gold-1));border-radius:999px;margin-bottom:16px;"></div>
+        <p style="font-size:14px;color:var(--ink-3);line-height:1.7;margin:0;">This standard governs how steel behaves in earthquake-resistant concrete structures. Ashiana® TMT Fe550 SD's high Uniform Elongation and controlled yield-to-ultimate ratio make it fully compliant with IS:13920 — giving structural engineers the confidence to specify our bars in seismic design without reservation.</p>
+      </div>
+      <div style="padding:48px 40px;position:relative;overflow:hidden;transition:background .3s;" onmouseover="this.style.background='rgba(200,146,42,.04)'" onmouseout="this.style.background=''">
+        <div style="width:44px;height:44px;border-radius:10px;background:var(--gold-dim);border:1px solid rgba(200,146,42,.35);display:flex;align-items:center;justify-content:center;margin-bottom:24px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold-2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h4 style="font-size:18px;font-weight:700;color:var(--ink);margin:0 0 8px;letter-spacing:-.02em;">In-House<br/>Laboratory Testing</h4>
+        <div style="width:32px;height:2px;background:linear-gradient(90deg,var(--gold-2),var(--gold-1));border-radius:999px;margin-bottom:16px;"></div>
+        <p style="font-size:14px;color:var(--ink-3);line-height:1.7;margin:0;">Before a single bar leaves our facility, it goes through a battery of tests — tensile testing, bend and re-bend tests, chemical composition analysis, and dimensional checks. Our in-house lab operates to NABL-aligned protocols, ensuring the numbers on our test certificates reflect the actual product you receive on site.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CERTIFICATIONS ═══════════ -->
+<div class="sec-bg2" style="padding:72px 0">
+  <div class="wrap">
+    <div class="certs-row will-anim" id="certs">
+      <div class="cert-label">Certified &amp;<br/>Trusted by</div>
+      <div class="cert-item"><strong>BIS Certified</strong><span>IS:1786 Fe550 SD</span></div>
+      <div class="cert-item"><strong>ISO 9001:2015</strong><span>Quality Management</span></div>
+      <div class="cert-item"><strong>Ashiana® TMT</strong><span>Brand Assurance</span></div>
+      <div class="cert-item"><strong>23+ Years</strong><span>Industry Experience</span></div>
+      <div class="cert-item"><strong>Pan India</strong><span>Distribution Network</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ CONTACT ═══════════ -->
+<section class="contact-sec" id="contact">
+  <div class="contact-parallax-bg" id="contactBg"></div>
+  <div class="contact-inner">
+    <div class="wrap">
+      <div class="will-anim contact-left-anim">
+        <div class="cl-label">07 / Contact Us</div>
+        <h2>Let's Build Something <span class="it">Great Together.</span></h2>
+        <div class="contact-gold-line"></div>
+        <p class="cl-sub">Whether you're planning your first home, developing a large housing project, or working on critical infrastructure — our team is ready to talk. Tell us what you're building and we'll help you figure out exactly what you need.</p>
+        <div class="contact-detail">
+          <div class="dk">Phone</div>
+          <div class="dv"><a href="tel:+919310088400">+91 9310 088 400</a></div>
+        </div>
+        <div class="contact-detail">
+          <div class="dk">Address</div>
+          <div class="dv" style="font-size:15px;line-height:1.65">KSAL<br/>Ashiana<sup class="tm-reg">®</sup> TMT Fe550 SD<br/>Ansal Plaza Mall,<br/>Khelgaon, New Delhi<br/>India</div>
+        </div>
+        <div class="contact-detail">
+          <div class="dk">Download</div>
+          <div class="dv"><a href="assets/Brochure.pdf" target="_blank" rel="noopener" download="Ashiana_TMT_Brochure.pdf">Product Brochure — Ashiana® TMT Fe550 SD ↓</a></div>
+        </div>
+      </div>
+
+      <form class="contact-form will-anim contact-form-anim" id="contactForm" novalidate>
+        <!-- Web3Forms config -->
+        <input type="hidden" name="access_key" value="3f0ca264-7f8f-449a-afe1-91e4801f7f53"/>
+        <input type="hidden" name="subject" value="New Enquiry — Ashiana® TMT Website"/>
+        <input type="hidden" name="from_name" value="Ashiana TMT Website"/>
+        <input type="hidden" name="redirect" value="false"/>
+        <input type="checkbox" name="botcheck" style="display:none"/>
+
+        <label>
+          <span class="cf-label">Full Name</span>
+          <input class="cf-input" id="cf-name" type="text" name="name" placeholder="e.g. Your Name" required autocomplete="name"/>
+          <span class="cf-err" id="err-name"></span>
+        </label>
+        <label>
+          <span class="cf-label">Email Address</span>
+          <input class="cf-input" id="cf-email" type="email" name="email" placeholder="e.g. abc@yourcompany.com" required autocomplete="email"/>
+          <span class="cf-err" id="err-email"></span>
+        </label>
+        <label>
+          <span class="cf-label">Phone Number</span>
+          <input class="cf-input" id="cf-phone" type="tel" name="phone" placeholder="+91 XXXXX XXXXX" maxlength="14" autocomplete="tel"/>
+          <span class="cf-err" id="err-phone"></span>
+        </label>
+        <label>
+          <span class="cf-label">Query Type</span>
+          <select class="cf-select" name="query_type">
+            <option value="">Select a topic</option>
+            <option>General enquiry</option>
+            <option>Product enquiry</option>
+            <option>Dealership</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label>
+          <span class="cf-label">State</span>
+          <select class="cf-select" id="cf-state" name="state">
+            <option value="">Select state</option>
+            <option>Andhra Pradesh</option><option>Arunachal Pradesh</option><option>Assam</option>
+            <option>Bihar</option><option>Chhattisgarh</option><option>Goa</option>
+            <option>Gujarat</option><option>Haryana</option><option>Himachal Pradesh</option>
+            <option>Jharkhand</option><option>Karnataka</option><option>Kerala</option>
+            <option>Madhya Pradesh</option><option>Maharashtra</option><option>Manipur</option>
+            <option>Meghalaya</option><option>Mizoram</option><option>Nagaland</option>
+            <option>Odisha</option><option>Punjab</option><option>Rajasthan</option>
+            <option>Sikkim</option><option>Tamil Nadu</option><option>Telangana</option>
+            <option>Tripura</option><option>Uttar Pradesh</option><option>Uttarakhand</option>
+            <option>West Bengal</option>
+            <option>Andaman &amp; Nicobar Islands</option><option>Chandigarh</option>
+            <option>Dadra &amp; Nagar Haveli and Daman &amp; Diu</option>
+            <option>Delhi</option><option>Jammu &amp; Kashmir</option><option>Ladakh</option>
+            <option>Lakshadweep</option><option>Puducherry</option>
+          </select>
+          <span class="cf-err" id="err-state"></span>
+        </label>
+        <label>
+          <span class="cf-label">City</span>
+          <input class="cf-input" id="cf-city" type="text" name="city" placeholder="City" autocomplete="address-level2"/>
+          <span class="cf-err" id="err-city"></span>
+        </label>
+        <label class="cf-full">
+          <span class="cf-label">Message</span>
+          <textarea class="cf-textarea" name="message" placeholder="Tell us about your project or requirement…"></textarea>
+        </label>
+        <div class="cf-submit">
+          <button class="cf-btn" type="submit" id="cfSubmitBtn">
+            <span id="cfBtnText">Submit Message</span><span>→</span>
+          </button>
+        </div>
+        <!-- Success panel -->
+        <div id="cf-success">
+          <div class="success-icon">
+            <svg viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 15.5L12 21.5L24 9" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <p class="success-title">Message Sent Successfully!</p>
+          <p class="success-sub">Thank you! Your message has been received. Our team will get back to you at<br/><strong id="cf-reply-email"></strong> — usually within one working day.</p>
+          <button class="cf-requery-btn" id="cfRequery" type="button">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.96"/></svg>
+            Send Another Query
+          </button>
+        </div>
+        <div id="cf-error" style="display:none;grid-column:1/-1;text-align:center;padding:18px 0;">
+          <div style="font-size:28px;margin-bottom:8px;">⚠️</div>
+          <p style="font-size:15px;color:#c0392b;margin:0 0 4px;">Something went wrong. Please try again.</p>
+          <p id="cf-error-msg" style="font-size:13px;color:rgba(10,8,6,.55);margin:0;"></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top will-anim">
+      <div class="footer-brand">
+        <div class="fb-logo">
+          <img
+            src="assets/logo1.png"
+            alt="Ashiana TMT"
+            onerror="this.style.display='none'"
+            style="height:110px;width:auto;object-fit:contain;"
+          />
+        </div>
+        <p>Ashiana<sup style="font-size:50%;top:-.8em;position:relative;font-weight:400">®</sup> TMT Fe550 SD — a brand of KSAL. Building India, one structure at a time. Trusted by builders and homeowners across the nation since 2002.</p>
+        <div class="footer-social-title">Follow us on</div>
+        <div class="footer-social-links">
+
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/ashianatmt/" target="_blank" rel="noopener" class="soc-ig" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+
+          <!-- Facebook -->
+          <a href="https://www.facebook.com/people/Ashiana-TMT/61589199576591/" target="_blank" rel="noopener" class="soc-fb" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+
+          <!-- X (Twitter) -->
+          <a href="https://x.com/AshianaTMT" target="_blank" rel="noopener" class="soc-x" aria-label="X / Twitter">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.91-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+
+          <!-- YouTube -->
+          <a href="https://www.youtube.com/@AshianaTMT" target="_blank" rel="noopener" class="soc-yt" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </a>
+
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/ashiana-tmt-4153b2408" target="_blank" rel="noopener" class="soc-li" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+
+        </div>
+      </div>
+
+      <div>
+        <h5>Navigate</h5>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#features">Key Features</a></li>
+          <li><a href="#applications">Applications</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5>Office</h5>
+        <p class="footer-addr">KSAL<br/>Ashiana<sup style="font-size:50%;top:-.8em;position:relative">®</sup> TMT Fe550 SD<br/><br/>Ansal Plaza Mall,<br/>Khelgaon, New Delhi<br/>India</p>
+      </div>
+
+      <div>
+        <h5>Resources</h5>
+        <ul>
+          <li><a href="assets/Brochure.pdf" target="_blank" rel="noopener" download="Ashiana_TMT_Brochure.pdf">Download Brochure ↓</a></li>
+          <li><a href="#product-sizes">TMT Bar Size Guide</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5>Contact</h5>
+        <p class="footer-addr">
+          <a href="tel:+919310088400">+91 9310 088 400</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 KSAL. All rights reserved. Ashiana<sup style="font-size:50%;top:-.5em;position:relative">®</sup> is a registered trademark. BIS Certified IS:1786 Fe550 SD. Designed and developed in India.</span>
+      <span>Ashiana® <span class="tmt">TMT</span> Fe550 SD</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════
+     SCRIPTS
+═══════════════════════════════════════════ -->
+<script>
+/* ─── Lenis smooth scroll ─── */
+const lenis = new Lenis({
+  duration: 1.2,
+  easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  smoothWheel: true,
+});
+function raf(time){ lenis.raf(time); requestAnimationFrame(raf); }
+requestAnimationFrame(raf);
+
+/* ─── GSAP + ScrollTrigger setup ─── */
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+ScrollTrigger.normalizeScroll(false);
+
+// Feed lenis scroll to GSAP ScrollTrigger
+lenis.on('scroll', ScrollTrigger.update);
+gsap.ticker.add(time => lenis.raf(time * 1000));
+gsap.ticker.lagSmoothing(0);
+
+/* ─── Scroll progress bar ─── */
+const progressBar = document.getElementById('progress');
+lenis.on('scroll', ({ progress }) => {
+  gsap.set(progressBar, { scaleX: progress, transformOrigin: 'left' });
+});
+
+/* ─── Nav active + solid ─── */
+const navEl = document.getElementById('nav');
+const navLinks = document.querySelectorAll('.nav-links a');
+lenis.on('scroll', ({ scroll }) => {
+  navEl.classList.toggle('solid', scroll > 60);
+});
+
+// Active nav link on scroll
+const sections = ['home','about','features','applications','why-choose','certifications','contact'];
+sections.forEach(id => {
+  const el = document.getElementById(id);
+  if(!el) return;
+  ScrollTrigger.create({
+    trigger: el,
+    start: 'top 60%',
+    end: 'bottom 40%',
+    onEnter: () => setActiveNav(id),
+    onEnterBack: () => setActiveNav(id),
+  });
+});
+function setActiveNav(id){
+  navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#'+id));
+}
+
+
+/* ─── Magnetic buttons ─── */
+document.querySelectorAll('.magnetic').forEach(el => {
+  el.addEventListener('mousemove', e => {
+    const r = el.getBoundingClientRect();
+    const dx = e.clientX - (r.left + r.width/2);
+    const dy = e.clientY - (r.top  + r.height/2);
+    gsap.to(el, { x: dx * .22, y: dy * .22, duration:.4, ease:'power2.out' });
+    el.style.setProperty('--bx', ((e.clientX - r.left)/r.width*100).toFixed(1)+'%');
+    el.style.setProperty('--by', ((e.clientY - r.top)/r.height*100).toFixed(1)+'%');
+  });
+  el.addEventListener('mouseleave', () => {
+    gsap.to(el, { x:0, y:0, duration:.5, ease:'elastic.out(1,.4)' });
+  });
+});
+
+/* ─── Hero entrance animation ─── */
+const heroTl = gsap.timeline({ defaults: { ease: 'power4.out' } });
+heroTl
+  .to('#heroEyebrow', { opacity:1, y:0, duration:1, delay:.2 }, 0)
+  .from('#heroH1 .word-inner', {
+    yPercent: 110, opacity:0, duration:1.1, stagger:.08,
+    ease: 'power4.out'
+  }, .35)
+  .to('#heroDeva',  { opacity:1, y:0, duration:.9 }, .75)
+  .to('#heroSub',   { opacity:1, y:0, duration:.85 }, .88)
+  .to('#heroCta',   { opacity:1, y:0, duration:.8 }, 1.0)
+  .to('#heroRight',{ opacity:1, x:0, duration:1,  ease:'power3.out' }, .5)
+  .to('#heroStats',{ opacity:1, y:0, duration:.8 }, 1.1);
+
+/* init states for hero elements */
+gsap.set('#heroDeva', { y: 16 });
+gsap.set('#heroSub',  { y: 14 });
+gsap.set('#heroCta',  { y: 12 });
+gsap.set('#heroRight',{ x: 30 });
+gsap.set('#heroStats',{ y: 20 });
+
+/* ─── Hero parallax ─── */
+const heroLayer = document.getElementById('heroLayer');
+gsap.to(heroLayer, {
+  yPercent: 18,
+  ease: 'none',
+  scrollTrigger: {
+    trigger: '.hero',
+    start: 'top top',
+    end: 'bottom top',
+    scrub: true,
+  }
+});
+
+/* Contact section parallax bg */
+const contactBg = document.getElementById('contactBg');
+gsap.to(contactBg, {
+  yPercent: 20,
+  ease: 'none',
+  scrollTrigger: {
+    trigger: '.contact-sec',
+    start: 'top bottom',
+    end: 'bottom top',
+    scrub: true,
+  }
+});
+
+/* ══════════════════════════════════════════
+   RICH SCROLL ANIMATIONS
+══════════════════════════════════════════ */
+
+/* ─── Generic will-anim baseline ─── */
+document.querySelectorAll('.will-anim').forEach(el => {
+  const delay = parseFloat(el.style.getPropertyValue('--delay') || '0');
+  gsap.fromTo(el,
+    { opacity:0, y:50, filter:'blur(6px)' },
+    { opacity:1, y:0, filter:'blur(0px)', duration:1.1, ease:'power3.out', delay,
+      scrollTrigger:{ trigger:el, start:'top 84%', once:true } }
+  );
+});
+
+/* ─── Section labels slide in from left ─── */
+document.querySelectorAll('.section-label').forEach(el => {
+  gsap.fromTo(el,
+    { opacity:0, x:-32, filter:'blur(4px)' },
+    { opacity:1, x:0, filter:'blur(0px)', duration:.8, ease:'power3.out',
+      scrollTrigger:{ trigger:el, start:'top 88%', once:true } }
+  );
+});
+
+/* ─── Section headings: blur + rise ─── */
+document.querySelectorAll('.section-h').forEach(el => {
+  gsap.fromTo(el,
+    { opacity:0, y:56, filter:'blur(10px)' },
+    { opacity:1, y:0, filter:'blur(0px)', duration:1.2, ease:'power4.out',
+      scrollTrigger:{ trigger:el, start:'top 86%', once:true } }
+  );
+});
+
+/* ─── Head blurb slides in from right ─── */
+document.querySelectorAll('.head-blurb').forEach(el => {
+  gsap.fromTo(el,
+    { opacity:0, x:36 },
+    { opacity:1, x:0, duration:1, ease:'power3.out',
+      scrollTrigger:{ trigger:el, start:'top 86%', once:true } }
+  );
+});
+
+/* ─── About copy — each paragraph individually ─── */
+document.querySelectorAll('.about-copy p').forEach((p, i) => {
+  gsap.fromTo(p,
+    { opacity:0, y:28, filter:'blur(5px)' },
+    { opacity:1, y:0, filter:'blur(0px)', duration:.95, ease:'power3.out',
+      delay: i * 0.14,
+      scrollTrigger:{ trigger:p, start:'top 88%', once:true } }
+  );
+});
+
+/* ─── Feature grid: perspective flip stagger ─── */
+gsap.set('#featGrid .feat', { opacity:0 });
+ScrollTrigger.create({
+  trigger: '#featGrid', start:'top 74%', once:true,
+  onEnter: () => {
+    gsap.fromTo('#featGrid .feat',
+      { opacity:0, y:48, rotateX:12, transformPerspective:900, filter:'blur(8px)' },
+      { opacity:1, y:0, rotateX:0, filter:'blur(0px)',
+        duration:1, stagger:{ amount:.7, from:'start' }, ease:'power3.out' }
+    );
+  }
+});
+
+/* ─── Apps grid: scale + depth cascade ─── */
+gsap.set('#appsGrid .app-card', { opacity:0 });
+ScrollTrigger.create({
+  trigger: '#appsGrid', start:'top 74%', once:true,
+  onEnter: () => {
+    gsap.fromTo('#appsGrid .app-card',
+      { opacity:0, y:64, scale:.9, rotateX:8, transformPerspective:1000, filter:'blur(8px)' },
+      { opacity:1, y:0, scale:1, rotateX:0, filter:'blur(0px)',
+        duration:1.05, stagger:{ amount:.5, from:'start' }, ease:'power3.out' }
+    );
+  }
+});
+
+/* ─── Certifications: slide in from left ─── */
+gsap.set('#certs > *', { opacity:0 });
+ScrollTrigger.create({
+  trigger: '#certs', start:'top 82%', once:true,
+  onEnter: () => {
+    gsap.fromTo('#certs > *',
+      { opacity:0, x:-28, filter:'blur(4px)' },
+      { opacity:1, x:0, filter:'blur(0px)', duration:.75, stagger:.09, ease:'power3.out' }
+    );
+  }
+});
+
+/* ─── Counters: count-up + rise ─── */
+gsap.set('#counters .counter-item', { opacity:0 });
+ScrollTrigger.create({
+  trigger: '#counters', start:'top 80%', once:true,
+  onEnter: () => {
+    gsap.fromTo('#counters .counter-item',
+      { opacity:0, y:36, scale:.95 },
+      { opacity:1, y:0, scale:1, duration:.8, stagger:.12, ease:'power3.out' }
+    );
+    document.querySelectorAll('.cnum').forEach(el => {
+      const target = +el.dataset.target;
+      gsap.fromTo(el,
+        { textContent:0 },
+        { textContent:target, duration:2.4, ease:'power2.out',
+          snap:{ textContent:1 },
+          onUpdate(){ el.textContent = Math.round(+el.textContent); } }
+      );
+    });
+  }
+});
+
+/* ─── Brand card pop ─── */
+ScrollTrigger.create({
+  trigger: '.brand-card', start:'top 82%', once:true,
+  onEnter: () => {
+    gsap.fromTo('.brand-card',
+      { opacity:0, scale:.88, rotateY:8, transformPerspective:800, filter:'blur(10px)' },
+      { opacity:1, scale:1, rotateY:0, filter:'blur(0px)', duration:1.1, ease:'power3.out' }
+    );
+  }
+});
+
+/* ─── Cert items hover glow line ─── */
+ScrollTrigger.create({
+  trigger: '.certs-row', start:'top 80%', once:true,
+  onEnter: () => {
+    gsap.fromTo('.cert-item',
+      { opacity:0, y:20 },
+      { opacity:1, y:0, duration:.7, stagger:.1, ease:'power3.out' }
+    );
+  }
+});
+
+/* ─── Footer columns stagger up ─── */
+ScrollTrigger.create({
+  trigger: '.footer-top', start:'top 88%', once:true,
+  onEnter: () => {
+    gsap.fromTo('.footer-top > *',
+      { opacity:0, y:32, filter:'blur(4px)' },
+      { opacity:1, y:0, filter:'blur(0px)', duration:.85, stagger:.12, ease:'power3.out' }
+    );
+  }
+});
+
+/* ─── Contact section: split slide ─── */
+ScrollTrigger.create({
+  trigger: '.contact-sec', start:'top 72%', once:true,
+  onEnter: () => {
+    gsap.fromTo('.contact-left-anim',
+      { opacity:0, x:-44, filter:'blur(8px)' },
+      { opacity:1, x:0, filter:'blur(0px)', duration:1.1, ease:'power3.out' }
+    );
+    gsap.fromTo('.contact-form-anim',
+      { opacity:0, x:44, filter:'blur(8px)' },
+      { opacity:1, x:0, filter:'blur(0px)', duration:1.1, delay:.12, ease:'power3.out' }
+    );
+  }
+});
+
+/* ─── Form fields reveal on focus-area enter ─── */
+ScrollTrigger.create({
+  trigger: '.contact-form', start:'top 80%', once:true,
+  onEnter: () => {
+    gsap.fromTo('.contact-form label',
+      { opacity:0, y:18 },
+      { opacity:1, y:0, duration:.6, stagger:.07, ease:'power2.out' }
+    );
+  }
+});
+
+/* ─── Section exit: subtle scale-down as section leaves top ─── */
+document.querySelectorAll('section.sec').forEach(sec => {
+  gsap.to(sec, {
+    opacity:.82, scale:.985, transformOrigin:'center top',
+    ease:'none',
+    scrollTrigger:{
+      trigger:sec, start:'bottom 20%', end:'bottom top',
+      scrub:1,
+    }
+  });
+});
+
+
+/* ─── Feat card 3D tilt ─── */
+document.querySelectorAll('.feat').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r  = card.getBoundingClientRect();
+    const dx = (e.clientX - r.left) / r.width  - .5;
+    const dy = (e.clientY - r.top)  / r.height - .5;
+    gsap.to(card, { rotateX: -dy*6, rotateY: dx*6, duration:.4, ease:'power2.out', transformPerspective:600 });
+  });
+  card.addEventListener('mouseleave', () => {
+    gsap.to(card, { rotateX:0, rotateY:0, duration:.6, ease:'elastic.out(.8,.4)' });
+  });
+});
+
+/* ─── App card inner parallax ─── */
+document.querySelectorAll('.app-card').forEach(card => {
+  const img = card.querySelector('.app-card-img');
+  card.addEventListener('mousemove', e => {
+    const r  = card.getBoundingClientRect();
+    const dx = (e.clientX - r.left) / r.width  - .5;
+    const dy = (e.clientY - r.top)  / r.height - .5;
+    gsap.to(img, { x: dx*12, y: dy*10, duration:.5, ease:'power2.out' });
+  });
+  card.addEventListener('mouseleave', () => {
+    gsap.to(img, { x:0, y:0, duration:.6, ease:'power2.out' });
+  });
+});
+
+/* ─── Smooth scroll nav links ─── */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if(!target) return;
+    e.preventDefault();
+    lenis.scrollTo(target, { offset:-80, duration:1.4 });
+  });
+});
+
+/* ─── Form validation + Web3Forms submit ─── */
+(function(){
+  const form    = document.getElementById('contactForm');
+  if(!form) return;
+
+  const btnText = document.getElementById('cfBtnText');
+  const btn     = document.getElementById('cfSubmitBtn');
+  const success = document.getElementById('cf-success');
+  const errorBox= document.getElementById('cf-error');
+  const errMsg  = document.getElementById('cf-error-msg');
+  const replyEl = document.getElementById('cf-reply-email');
+
+  /* ── Validators ── */
+  const rules = {
+    'cf-name':  {
+      test: v => /^[A-Za-zÀ-ɏ\s'-]{2,}$/.test(v.trim()),
+      msg:  'Please enter a valid name (letters only)'
+    },
+    'cf-email': {
+      test: v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()),
+      msg:  'Please enter a valid email address'
+    },
+    'cf-phone': {
+      test: v => v === '' || /^[+]?[\d\s\-]{7,14}$/.test(v.trim()),
+      msg:  'Enter a valid phone number (digits only)'
+    },
+    'cf-state': {
+      test: v => v !== '',
+      msg:  'Please select your state'
+    },
+    'cf-city':  {
+      test: v => v === '' || /^[A-Za-zÀ-ɏ\s'-]{2,}$/.test(v.trim()),
+      msg:  'City should contain letters only'
+    }
+  };
+
+  function showErr(id, msg){
+    const el  = document.getElementById(id);
+    const err = document.getElementById('err-' + id.replace('cf-',''));
+    if(!el || !err) return;
+    el.classList.add('invalid'); el.classList.remove('valid');
+    err.textContent = msg; err.classList.add('visible');
+  }
+  function clearErr(id){
+    const el  = document.getElementById(id);
+    const err = document.getElementById('err-' + id.replace('cf-',''));
+    if(!el || !err) return;
+    el.classList.remove('invalid'); el.classList.add('valid');
+    err.textContent = ''; err.classList.remove('visible');
+  }
+  function validateField(id){
+    const rule = rules[id];
+    if(!rule) return true;
+    const el = document.getElementById(id);
+    if(!el) return true;
+    const val = el.value;
+    if(rule.test(val)){ clearErr(id); return true; }
+    else              { showErr(id, rule.msg); return false; }
+  }
+
+  /* ── Block invalid keystrokes on name / city ── */
+  ['cf-name','cf-city'].forEach(id => {
+    const el = document.getElementById(id);
+    if(!el) return;
+    el.addEventListener('keypress', e => {
+      if(!/[A-Za-zÀ-ɏ\s'\-]/.test(e.key)) e.preventDefault();
+    });
+    el.addEventListener('paste', e => {
+      const pasted = (e.clipboardData || window.clipboardData).getData('text');
+      if(/[^A-Za-zÀ-ɏ\s'\-]/.test(pasted)) e.preventDefault();
+    });
+  });
+
+  /* ── Allow only digits / + / space / dash in phone ── */
+  const phoneEl = document.getElementById('cf-phone');
+  if(phoneEl){
+    phoneEl.addEventListener('keypress', e => {
+      if(!/[\d+\s\-]/.test(e.key)) e.preventDefault();
+    });
+    phoneEl.addEventListener('input', e => {
+      // Strip anything that slipped through
+      e.target.value = e.target.value.replace(/[^\d+\s\-]/g,'');
+    });
+    phoneEl.addEventListener('paste', e => {
+      const pasted = (e.clipboardData || window.clipboardData).getData('text');
+      if(/[^\d+\s\-]/.test(pasted)) e.preventDefault();
+    });
+  }
+
+  /* ── Live validation on blur ── */
+  Object.keys(rules).forEach(id => {
+    const el = document.getElementById(id);
+    if(el) el.addEventListener('blur', () => validateField(id));
+    // Also clear error as soon as user starts correcting
+    if(el) el.addEventListener('input', () => {
+      if(el.classList.contains('invalid')) validateField(id);
+    });
+  });
+
+  /* ── Submit ── */
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+
+    // Run all validators
+    const allValid = Object.keys(rules).map(id => validateField(id)).every(Boolean);
+    if(!allValid){
+      // Scroll to first invalid field
+      const first = form.querySelector('.invalid');
+      if(first) first.focus();
+      return;
+    }
+
+    btn.disabled = true;
+    btnText.textContent = 'Sending…';
+    success.style.display = 'none';
+    errorBox.style.display = 'none';
+
+    const data = Object.fromEntries(new FormData(form));
+    if(replyEl) replyEl.textContent = data.email || '';
+
+    try {
+      const res  = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      const json = await res.json();
+
+      if(json.success){
+        success.style.display = 'flex';
+        form.querySelectorAll('label, .cf-submit').forEach(el => el.style.display = 'none');
+        btnText.textContent = 'Submit Message';
+        btn.disabled = false;
+      } else {
+        throw new Error(json.message || 'Submission failed');
+      }
+    } catch(err){
+      errorBox.style.display = '';
+      errMsg.textContent  = err.message || 'Network error — please try again.';
+      btnText.textContent = 'Submit Message';
+      btn.disabled = false;
+    }
+  });
+
+  /* ── Send Another Query ── */
+  const requery = document.getElementById('cfRequery');
+  if(requery){
+    requery.addEventListener('click', () => {
+      // Hide success, show all fields again
+      success.style.display = 'none';
+      form.querySelectorAll('label, .cf-submit').forEach(el => el.style.display = '');
+      // Reset form values and validation states
+      form.reset();
+      form.querySelectorAll('.cf-input, .cf-select').forEach(el => {
+        el.classList.remove('valid','invalid');
+      });
+      form.querySelectorAll('.cf-err').forEach(el => {
+        el.textContent = ''; el.classList.remove('visible');
+      });
+      // Scroll back to top of form
+      form.scrollIntoView({ behavior:'smooth', block:'center' });
+    });
+  }
+})();
+
+/* ─── Logo float animation ─── */
+gsap.to('.logo-img-wrap', {
+  y: -14,
+  duration: 3,
+  ease: 'sine.inOut',
+  yoyo: true,
+  repeat: -1,
+});
+
+/* ─── Hamburger / Mobile Nav ─── */
+(function(){
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  if(!hamburger || !mobileNav) return;
+
+  function openMenu(){
+    hamburger.classList.add('open');
+    mobileNav.classList.add('open');
+    hamburger.setAttribute('aria-expanded','true');
+    mobileNav.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu(){
+    hamburger.classList.remove('open');
+    mobileNav.classList.remove('open');
+    hamburger.setAttribute('aria-expanded','false');
+    mobileNav.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.contains('open') ? closeMenu() : openMenu();
+  });
+
+  // Close on any nav link click
+  mobileNav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      closeMenu();
+    });
+  });
+
+  // Close on outside tap (the overlay itself)
+  mobileNav.addEventListener('click', e => {
+    if(e.target === mobileNav) closeMenu();
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', e => {
+    if(e.key === 'Escape') closeMenu();
+  });
+})();
+
+</script>
+</body>
+</html>
