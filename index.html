@@ -487,6 +487,9 @@ sup.tm-sup {
 }
 .h-stat{ position:relative; padding-right:24px; }
 .h-stat + .h-stat{ padding-left:24px; border-left:1px solid var(--line-2); }
+@media(max-width:768px){
+  .h-stat, .h-stat + .h-stat{ padding:16px 14px !important; border:none !important; border-left:none !important; }
+}
 .h-stat .sk{ font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:var(--gold-2); margin-bottom:10px; }
 .h-stat .sv{ font-size:clamp(24px,2.8vw,36px); font-weight:700; letter-spacing:-.025em; line-height:1.05; color:var(--ink); margin-bottom:6px; }
 .h-stat .sd{ font-size:13px; color:var(--ink-3); line-height:1.4; }
