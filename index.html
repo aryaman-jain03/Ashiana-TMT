@@ -1118,9 +1118,9 @@ footer ul a:hover::before{ opacity:1; margin-right:0; }
   .hero{ padding-top:76px; padding-bottom:16px; overflow:hidden; min-height:unset; justify-content:flex-start; }
   .hero-grid{ gap:0; }
   .hero-stats{ grid-template-columns:1fr 1fr; gap:0; margin-top:16px; border:1px solid rgba(200,146,42,.2); border-radius:8px; overflow:hidden; }
-  .h-stat, .h-stat + .h-stat{ padding:16px 14px !important; border:none !important; border-bottom:1px solid rgba(200,146,42,.2) !important; text-align:left; }
-  .h-stat:nth-child(odd){ border-right:1px solid rgba(200,146,42,.2) !important; }
-  .h-stat:nth-last-child(-n+2){ border-bottom:none !important; }
+  .hero-stats .h-stat{ padding:16px 14px !important; border:none !important; border-bottom:1px solid rgba(200,146,42,.2) !important; text-align:left; box-sizing:border-box; width:100%; }
+  .hero-stats .h-stat:nth-child(odd){ border-right:1px solid rgba(200,146,42,.2) !important; }
+  .hero-stats .h-stat:nth-last-child(-n+2){ border-bottom:none !important; }
   .certs-row{ grid-template-columns:1fr 1fr; }
   .cert-label{ display:none; }
   .cert-item{ padding:16px; border-right:none; border-bottom:1px solid var(--line); }
@@ -1161,7 +1161,10 @@ footer ul a:hover::before{ opacity:1; margin-right:0; }
   .hero-eyebrow{ margin-bottom:14px; }
   .hero h1{ margin-bottom:10px; }
   .hero-deva{ margin-bottom:14px; }
-  .hero-stats{ grid-template-columns:1fr 1fr; gap:12px; }
+  .hero-stats{ grid-template-columns:1fr 1fr; gap:0; border:1px solid rgba(200,146,42,.2); border-radius:8px; overflow:hidden; }
+  .hero-stats .h-stat{ padding:16px 14px !important; border:none !important; border-bottom:1px solid rgba(200,146,42,.2) !important; text-align:left; box-sizing:border-box; width:100%; }
+  .hero-stats .h-stat:nth-child(odd){ border-right:1px solid rgba(200,146,42,.2) !important; }
+  .hero-stats .h-stat:nth-last-child(-n+2){ border-bottom:none !important; }
   .h-stat{ padding:16px 14px; }
   .h-stat .sv{ font-size:22px; }
   .apps-grid{ grid-template-columns:1fr 1fr; gap:10px; }
@@ -1204,8 +1207,10 @@ footer ul a:hover::before{ opacity:1; margin-right:0; }
   .feat-body{ padding:16px 14px 24px; }
   .feat h4{ font-size:clamp(16px,4.5vw,20px); }
   .apps-grid{ grid-template-columns:1fr 1fr; gap:8px; }
-  .hero-stats{ grid-template-columns:1fr 1fr; gap:10px; }
-  .h-stat{ padding:14px 12px; }
+  .hero-stats{ grid-template-columns:1fr 1fr; gap:0; border:1px solid rgba(200,146,42,.2); border-radius:8px; overflow:hidden; }
+  .hero-stats .h-stat{ padding:14px 12px !important; border:none !important; border-bottom:1px solid rgba(200,146,42,.2) !important; text-align:left; box-sizing:border-box; width:100%; }
+  .hero-stats .h-stat:nth-child(odd){ border-right:1px solid rgba(200,146,42,.2) !important; }
+  .hero-stats .h-stat:nth-last-child(-n+2){ border-bottom:none !important; }
   .h-stat .sv{ font-size:20px; }
   .h-stat .sk{ font-size:9px; }
   .footer-top{ grid-template-columns:1fr; gap:28px; }
